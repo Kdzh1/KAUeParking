@@ -13,7 +13,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public DBHelper(Context context) {
         super(context, "DB2022", null, 1);
     }
-
+        String Zhran = "Love";
     @Override
     public void onCreate(SQLiteDatabase DB) {
         DB.execSQL("CREATE TABLE admin (id TEXT UNIQUE, password TEXT,name TEXT,phone TEXT, PRIMARY KEY(id))");
@@ -21,6 +21,7 @@ public class DBHelper extends SQLiteOpenHelper {
         DB.execSQL("CREATE TABLE security (id TEXT UNIQUE, password TEXT, name TEXT, phone TEXT, PRIMARY KEY(id));");
         DB.execSQL("CREATE TABLE ticket (id INTEGER UNIQUE,plate TEXT,price TEXT,\n" +
                 "location TEXT, time TEXT, status INTEGER DEFAULT 0, approved INTEGER DEFAULT 0, driverID TEXT, PRIMARY KEY(id), FOREIGN KEY(driverID)REFERENCES driver (id));");
+
     }
 
     @Override
