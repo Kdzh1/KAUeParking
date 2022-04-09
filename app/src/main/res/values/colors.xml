@@ -7,4 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="Kau">#0781B4</color>
+    <color name="color">#BF007A</color>
+    <color name="color1">#BF007A</color>
+    <color name="green">#229C27</color>
+    <color name="greeny">#7DD95A</color>
+    <color name="greeny1">#449127</color>
+    <color name="greeny2">#008037</color>
+    <color name="sindbadColor">#182F3D</color>
+
 </resources>
