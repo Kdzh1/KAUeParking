@@ -14,6 +14,7 @@ public class DBHelper extends SQLiteOpenHelper {
         super(context, "DB2022", null, 1);
     }
         String Zhran = "Love";
+        String Sssss = "KKKKKKKK";
     @Override
     public void onCreate(SQLiteDatabase DB) {
         DB.execSQL("CREATE TABLE admin (id TEXT UNIQUE, password TEXT,name TEXT,phone TEXT, PRIMARY KEY(id))");
