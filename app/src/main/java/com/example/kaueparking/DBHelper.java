@@ -219,7 +219,7 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery("SELECT * FROM Ticket where driverID=? ", new String[] {id});
         ArrayList arr = new ArrayList();
-        if (c.moveToFirst()){
+        if (c.moveToFirst()){  // Test for ***********************
             do {
                 Ticket ticket = new Ticket();
                 ticket.setId(Integer.parseInt(c.getString(0)));
