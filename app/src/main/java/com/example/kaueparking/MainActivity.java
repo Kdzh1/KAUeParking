@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText userID = (EditText) findViewById(R.id.userid);
-                EditText password = findViewById(R.id.password);
+                EditText password = findViewById(R.id.userpass);
 
                 String text = userID.getText().toString();
                 String pass = password.getText().toString();
