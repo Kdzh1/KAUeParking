@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "592987830593",
+    "project_id": "kaueparking",
+    "storage_bucket": "kaueparking.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:592987830593:android:6d68f3e0b95ead2e3ac9c0",
+        "android_client_info": {
+          "package_name": "com.example.kaueparking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "592987830593-t285vamtkubjtsgo3cs8bjb58jho8gta.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCguKAH9bcDOB-hueGJcd4u_yWBOcNu384"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "592987830593-t285vamtkubjtsgo3cs8bjb58jho8gta.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

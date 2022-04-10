@@ -10,6 +10,7 @@ public class Ticket {
     private int approved;
     private String driverID;
 
+
     public int getId() {
         return id;
     }
