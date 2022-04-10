@@ -12,7 +12,7 @@ public class SecurityActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_security);
-        Button newFine = findViewById(R.id.newFineBtn);
+        Button newFine = findViewById(R.id.userID);
         newFine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
