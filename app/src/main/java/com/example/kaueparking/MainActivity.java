@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText userID = (EditText) findViewById(R.id.userID);
+                EditText userID = (EditText) findViewById(R.id.userid);
                 EditText password = findViewById(R.id.password);
 
                 String text = userID.getText().toString();
