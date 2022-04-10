@@ -13,7 +13,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public DBHelper(Context context) {
         super(context, "DB2022", null, 1);
     }
-//
+//دولة عربية من 4 حروف اذا حذفت اخر حرفين اصبح اسم مشروب ??
 @Override
     public void onCreate(SQLiteDatabase DB) {
         DB.execSQL("CREATE TABLE admin (id TEXT UNIQUE, password TEXT,name TEXT,phone TEXT, PRIMARY KEY(id))");
