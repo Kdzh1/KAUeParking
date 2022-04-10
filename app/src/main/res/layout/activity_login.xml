@@ -5,15 +5,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black">
+    android:background="@color/greenkau">
 
 
     <ImageView
-        android:layout_width="279dp"
-        android:layout_height="222dp"
+        android:layout_width="409dp"
+        android:layout_height="223dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/logo"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="91dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </ImageView>
 

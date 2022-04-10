@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1645" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/drawable/border.xml" value="0.1" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/drawable/ic_edit.xml" value="0.1645" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1645" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
@@ -15,6 +16,7 @@
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_driver.xml" value="0.15579710144927536" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_security.xml" value="0.21" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_start_page.xml" value="0.2" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/fragment_first.xml" value="0.25" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/securityhomepage.xml" value="0.25" />
         <entry key="..\:/Users/azooz/AndroidStudioProjects/xxxx/app/src/main/res/drawable/border.xml" value="0.121" />
@@ -45,7 +47,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.33" />
+        <option name="scale" value="0.2" />
       </ProjectState>
     </option>
   </component>

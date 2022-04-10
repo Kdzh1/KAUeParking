@@ -180,7 +180,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:text="Advices"
+                            android:text="Objection"
                             android:textStyle="bold" />
 
 
