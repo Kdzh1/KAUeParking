@@ -17,7 +17,7 @@
         android:layout_gravity="start"
         android:layout_marginBottom="396dp"
         android:enabled="true"
-        android:text="Security Activity"
+        android:text="New Fine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.46"

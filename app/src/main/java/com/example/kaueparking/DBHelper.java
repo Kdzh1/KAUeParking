@@ -19,8 +19,8 @@ public class DBHelper extends SQLiteOpenHelper {
         DB.execSQL("CREATE TABLE admin (id TEXT UNIQUE, password TEXT,name TEXT,phone TEXT, PRIMARY KEY(id))");
         DB.execSQL("CREATE TABLE driver (id TEXT UNIQUE, password TEXT, name TEXT, phone TEXT , PRIMARY KEY(id));");
         DB.execSQL("CREATE TABLE security (id TEXT UNIQUE, password TEXT, name TEXT, phone TEXT, PRIMARY KEY(id));");
-        DB.execSQL("CREATE TABLE ticket (id INTEGER UNIQUE,plate TEXT,price TEXT,location TEXT, time TEXT, status INTEGER DEFAULT 0, approved INTEGER DEFAULT 0, driverID TEXT, PRIMARY KEY(id), FOREIGN KEY(driverID)REFERENCES driver (id));");
-
+        DB.execSQL("CREATE TABLE ticket (id INTEGER UNIQUE,plate TEXT,price TEXT,location TEXT, time TEXT, status INTEGER DEFAULT 0, approved INTEGER DEFAULT 0, driverID TEXT, violation BLOB, PRIMARY KEY(id), FOREIGN KEY(driverID)REFERENCES driver (id));");
+        DB.execSQL("insert into security values ('1222','123','khalid','1233222')");
     }
 
     @Override
@@ -143,6 +143,7 @@ public class DBHelper extends SQLiteOpenHelper {
             contentValues.put("status",Integer.parseInt(data[4]));
             contentValues.put("status",Integer.parseInt(data[5]));
             contentValues.put("driverID",data[6]);
+            contentValues.put("violation",data[7]);
             long result = db.insert("ticket", null, contentValues);
             if (result==-1){ return false; }
             else { return true; }
@@ -219,7 +220,7 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery("SELECT * FROM Ticket where driverID=? ", new String[] {id});
         ArrayList arr = new ArrayList();
-        if (c.moveToFirst()){ // iprfjw9hauiergrfpihwp9ghhwth8
+        if (c.moveToFirst()){
             do {
                 Ticket ticket = new Ticket();
                 ticket.setId(Integer.parseInt(c.getString(0)));

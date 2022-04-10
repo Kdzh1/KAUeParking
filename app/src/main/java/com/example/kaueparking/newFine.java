@@ -69,7 +69,19 @@ public class newFine extends AppCompatActivity {
             @Override
             public void onSuccess(FirebaseVisionText firebaseVisionText) {
                 String s = firebaseVisionText.getText();
-                textView.setText(s);
+                String [] text = s.split(" ");
+                String numbers="";
+                String letters="";
+                for (int i = 0; i < text.length; i++) {
+                    if (text[i].length()>3){
+                        numbers=text[i];
+
+                    }else if (text[i].length()==3){
+                        letters= text[i];
+                    }
+                }
+                String ss = numbers+"\n"+letters;
+                textView.setText(ss);
             }
         });
         //6.if the task failed
