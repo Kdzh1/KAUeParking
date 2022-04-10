@@ -2,6 +2,7 @@ package com.example.kaueparking;
 
 public class Driver extends User {
     private int ticketID;
+    private String plate;
     public Driver() {
     }
 
@@ -11,5 +12,13 @@ public class Driver extends User {
 
     public void setTicketID(int ticketID) {
         this.ticketID = ticketID;
+    }
+
+    public String getPlate() {
+        return plate;
+    }
+
+    public void setPlate(String plate) {
+        this.plate = plate;
     }
 }

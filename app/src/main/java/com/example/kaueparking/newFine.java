@@ -24,15 +24,19 @@ import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.text.FirebaseVisionText;
 import com.google.firebase.ml.vision.text.FirebaseVisionTextRecognizer;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class newFine extends AppCompatActivity {
     ImageView imageView;
-    TextView textView;
+    TextView plateInfo, time;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_fine);
         imageView = findViewById(R.id.imageId); // To Control image
-        textView = findViewById(R.id.textId);
+        plateInfo = findViewById(R.id.plate);
+        time = findViewById(R.id.time);
 
         // Check if permission is granted for camera
         if (checkSelfPermission(Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){ // If the permission is not granted
@@ -80,8 +84,10 @@ public class newFine extends AppCompatActivity {
                         letters= text[i];
                     }
                 }
-                String ss = numbers+"\n"+letters;
-                textView.setText(ss);
+                String ss = numbers+"\t"+letters;
+                plateInfo.setText(ss);
+                String currentTime = ""+Calendar.getInstance().getTime().getHours()+":"+Calendar.getInstance().getTime().getMinutes();
+                time.setText(currentTime); // displaying hours and minutes only
             }
         });
         //6.if the task failed
