@@ -29,7 +29,7 @@ import java.util.Date;
 
 public class newFine extends AppCompatActivity {
     ImageView imageView;
-    TextView plateInfo, time;
+    TextView plateInfo, time, price;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +37,7 @@ public class newFine extends AppCompatActivity {
         imageView = findViewById(R.id.imageId); // To Control image
         plateInfo = findViewById(R.id.plate);
         time = findViewById(R.id.time);
-
+        price = findViewById(R.id.price);
         // Check if permission is granted for camera
         if (checkSelfPermission(Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){ // If the permission is not granted
             requestPermissions(new String[]{Manifest.permission.CAMERA},101); // requestCode can accept any value
@@ -88,6 +88,9 @@ public class newFine extends AppCompatActivity {
                 plateInfo.setText(ss);
                 String currentTime = ""+Calendar.getInstance().getTime().getHours()+":"+Calendar.getInstance().getTime().getMinutes();
                 time.setText(currentTime); // displaying hours and minutes only
+                price.setText("150");
+
+
             }
         });
         //6.if the task failed
