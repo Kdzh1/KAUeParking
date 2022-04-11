@@ -110,6 +110,7 @@ public class newFine extends AppCompatActivity {
             violationImage.setImageBitmap(bitmap);
 
 
+
         }
     }
 
