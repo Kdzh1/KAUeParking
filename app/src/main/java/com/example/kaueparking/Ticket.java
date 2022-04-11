@@ -8,8 +8,8 @@ public class Ticket {
     private String price;
     private String location;
     private String time;
-    private int status;
-    private int approved;
+    private int status = 0; // Ticket is not paid
+    private int approved = 1; // Ticket is approved and no need for admin to check it
     private String driverID;
     private Bitmap violationImg;
 
@@ -75,5 +75,14 @@ public class Ticket {
 
     public void setDriverID(String driverID) {
         this.driverID = driverID;
+    }
+
+    public Bitmap getViolationImg() {
+        return violationImg;
+    }
+
+
+    public void setViolationImg(Bitmap violationImg) {
+        this.violationImg = violationImg;
     }
 }

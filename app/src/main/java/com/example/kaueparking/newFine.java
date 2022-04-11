@@ -12,6 +12,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,11 +25,13 @@ import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.text.FirebaseVisionText;
 import com.google.firebase.ml.vision.text.FirebaseVisionTextRecognizer;
 
+import java.io.ByteArrayOutputStream;
 import java.util.Calendar;
 
 public class newFine extends AppCompatActivity {
     ImageView plateImage, violationImage;
     TextView plateInfo, time, price;
+    Button submit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +41,8 @@ public class newFine extends AppCompatActivity {
         plateInfo = findViewById(R.id.plate);
         time = findViewById(R.id.time);
         price = findViewById(R.id.price);
+        submit = findViewById(R.id.submit);
+
         DBHelper db = new DBHelper(this);
         Ticket ticket = new Ticket();
         // Check if permission is granted for camera
@@ -55,11 +60,20 @@ public class newFine extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        Ticket t = new Ticket();
+        DBHelper db = new DBHelper(this);
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                System.out.println(db.insertData(t));
+            }
+        });
         super.onActivityResult(requestCode, resultCode, data);
         // The remaining steps after taking a picture will be here
         // Extracting the text from the picture...
         if (requestCode==101) {
+
             Bundle bundle = data.getExtras(); // From this bundle object we can extract the image
             Bitmap bitmap = (Bitmap) bundle.get("data"); // Here we have the taken picture
             plateImage.setImageBitmap(bitmap); // Display the taken picture
@@ -76,7 +90,9 @@ public class newFine extends AppCompatActivity {
             task.addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>() {
                 @Override
                 public void onSuccess(FirebaseVisionText firebaseVisionText) {
+
                     String s = firebaseVisionText.getText();
+
                     String[] text = s.split(" ");
                     String numbers = "";
                     String letters = "";
@@ -88,12 +104,18 @@ public class newFine extends AppCompatActivity {
                             letters = text[i];
                         }
                     }
-                    String ss = numbers + "\t" + letters;
+                    String ss = numbers + letters;
+                    System.out.println(ss);
+                    t.setId(1);
+                    t.setPlate(ss);
                     plateInfo.setText(ss);
                     String currentTime = "" + Calendar.getInstance().getTime().getHours() + ":" + Calendar.getInstance().getTime().getMinutes();
+                    t.setTime(currentTime);
                     time.setText(currentTime); // displaying hours and minutes only
                     price.setText("150");
+                    t.setPrice("150");
 
+                    t.setDriverID(db.getDriverID(ss));
 
                 }
             });
@@ -108,7 +130,7 @@ public class newFine extends AppCompatActivity {
             Bundle bundle = data.getExtras(); // From this bundle object we can extract the image
             Bitmap bitmap = (Bitmap) bundle.get("data"); // Here we have the taken picture
             violationImage.setImageBitmap(bitmap);
-
+            t.setViolationImg(bitmap);
 
 
         }
@@ -117,6 +139,11 @@ public class newFine extends AppCompatActivity {
     public void doProcess2(View view) {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent,102);
+
+    }
+
+
+    public void submit(View view, Ticket t) {
 
     }
 

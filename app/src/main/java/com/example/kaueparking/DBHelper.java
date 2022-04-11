@@ -5,7 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Bitmap;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class DBHelper extends SQLiteOpenHelper {
@@ -14,7 +16,7 @@ public class DBHelper extends SQLiteOpenHelper {
         super(context, "DB2022", null, 1);
     }
 
-@Override
+    @Override
     public void onCreate(SQLiteDatabase DB) {
         DB.execSQL("CREATE TABLE admin (id TEXT UNIQUE, password TEXT,name TEXT,phone TEXT, PRIMARY KEY(id))");
         DB.execSQL("CREATE TABLE driver (id TEXT UNIQUE, password TEXT, name TEXT, phone TEXT, plate TEXT , PRIMARY KEY(id));");
@@ -30,64 +32,57 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
-    public boolean insertData(String tableName, String data []){
+    public boolean insertData(Object obj) {
 
-        if (tableName.equalsIgnoreCase("driver")){
-            return driverTable("insert",data);
-        }else if (tableName.equalsIgnoreCase("security")){
-            return securityTable("insert",data);
-        }else if (tableName.equalsIgnoreCase("ticket")){
-            return ticketTable("insert",data);
-        }else
-        return false;
-
-    }
-    public boolean deleteData(String tableName, String data []){
-
-        if (tableName.equalsIgnoreCase("driver")){
-            return driverTable("delete",data);
-        }else if (tableName.equalsIgnoreCase("security")){
-            return securityTable("delete",data);
-        }else if (tableName.equalsIgnoreCase("ticket")){
-            return ticketTable("delete",data);
-        }else
+        if (obj instanceof Driver) {
+            return driverTable("insert", obj);
+        } else if (obj instanceof Security) {
+            return securityTable("insert", obj);
+        } else if (obj instanceof Ticket) {
+            return ticketTable("insert", obj);
+        } else
             return false;
 
     }
-    private boolean driverTable(String operation, String data[]){
+
+    public boolean deleteData(String tableName, String data[]) {
+
+        if (tableName.equalsIgnoreCase("driver")) {
+            return driverTable("delete", data);
+        } else if (tableName.equalsIgnoreCase("security")) {
+            return securityTable("delete", data);
+        } else if (tableName.equalsIgnoreCase("ticket")) {
+            return ticketTable("delete", data);
+        } else
+            return false;
+
+    }
+
+    private boolean driverTable(String operation, Object obj) {
         SQLiteDatabase db = this.getWritableDatabase();
+        Driver d = (Driver) obj;
         ContentValues contentValues = new ContentValues();
-        if (operation.equalsIgnoreCase("insert")){                                     // INSERT
+        if (operation.equalsIgnoreCase("insert")) {                                     // INSERT
 
-            contentValues.put("id",data[0]);
-            contentValues.put("password", data[1]);
-            contentValues.put("name",data[2]);                                              // <---- CONTENT OF THE ARRAY
-            contentValues.put("phone",data[3]);
-            contentValues.put("ticketID",Integer.parseInt(data[4]));
-
+            contentValues.put("id", d.getId());
+            contentValues.put("password", d.getPassword());
+            contentValues.put("name", d.getName());                                              // <---- CONTENT OF THE ARRAY
+            contentValues.put("phone", d.getPhone());
+            contentValues.put("plate", d.getPlate());
 
             long result = db.insert("driver", null, contentValues);
-            if (result==-1){ return false; }
-            else { return true; }
-
-        }else if(operation.equalsIgnoreCase("updateTicket")){                          // UPDATE
-
-            contentValues.put("ticketID", data[0]);                                               // [0] = TICKET ID, [1] = USER ID
-            Cursor cursor = db.rawQuery("select * from driver where id = ?", new String[] {data[1]} ); /* to check if the given id is exist or not   */
-            if (cursor.getCount()>0) {
-                long result = db.update("driver", contentValues, "id=?", new String[]{data[1]}); /* update will always return true even if it is null value */
-                if (result == -1) {
-                    return false;
-                } else {
-                    return true;
-                }
+            if (result == -1) {
+                return false;
+            } else {
+                return true;
             }
-        }else if(operation.equalsIgnoreCase("delete")){                                // DELETE
 
-                                                                                                  // [0] = USER ID
-            Cursor cursor = db.rawQuery("select * from driver where id = ?", new String[] {data[0]} ); /* to check if the given id is exist or not   */
-            if (cursor.getCount()>0) {
-                long result = db.delete("driver", "id=?", new String[]{data[0]}); /* will always return true even if it is null value */
+        } else if (operation.equalsIgnoreCase("delete")) {                                // DELETE
+
+            // [0] = USER ID
+            Cursor cursor = db.rawQuery("select * from driver where id = ?", new String[]{d.getId()}); /* to check if the given id is exist or not   */
+            if (cursor.getCount() > 0) {
+                long result = db.delete("driver", "id=?", new String[]{d.getId()}); /* will always return true even if it is null value */
                 if (result == -1) {
                     return false;
                 } else {
@@ -95,32 +90,36 @@ public class DBHelper extends SQLiteOpenHelper {
                 }
             }
         }
-            return false;
+        return false;
 
     }
 
 
-    private boolean securityTable(String operation, String data[]){
+    private boolean securityTable(String operation, Object obj) {
         SQLiteDatabase db = this.getWritableDatabase();
+        Security s = (Security) obj;
         ContentValues contentValues = new ContentValues();
-        if (operation.equalsIgnoreCase("insert")){                                     // INSERT
+        if (operation.equalsIgnoreCase("insert")) {                                     // INSERT
 
-            contentValues.put("id",data[0]);
-            contentValues.put("password", data[1]);
-            contentValues.put("name",data[2]);                                                    // CONTENT OF THE ARRAY
-            contentValues.put("phone",data[3]);
+            contentValues.put("id", s.getId());
+            contentValues.put("password", s.getPassword());
+            contentValues.put("name", s.getName());                                                    // CONTENT OF THE ARRAY
+            contentValues.put("phone", s.getPhone());
 
 
             long result = db.insert("security", null, contentValues);
-            if (result==-1){ return false; }
-            else { return true; }
+            if (result == -1) {
+                return false;
+            } else {
+                return true;
+            }
 
-        }else if(operation.equalsIgnoreCase("delete")){                                // DELETE
+        } else if (operation.equalsIgnoreCase("delete")) {                                // DELETE
 
-                                                                                                  // [0] = SECURITY ID
-            Cursor cursor = db.rawQuery("select * from security where id = ?", new String[] {data[0]} ); /* to check if the given id is exist or not   */
-            if (cursor.getCount()>0) {
-                long result = db.delete("security", "id=?", new String[]{data[0]}); /* delete will always return true even if it is null value */
+            // [0] = SECURITY ID
+            Cursor cursor = db.rawQuery("select * from security where id = ?", new String[]{s.getId()}); /* to check if the given id is exist or not   */
+            if (cursor.getCount() > 0) {
+                long result = db.delete("security", "id=?", new String[]{s.getId()}); /* delete will always return true even if it is null value */
                 if (result == -1) {
                     return false;
                 } else {
@@ -132,61 +131,72 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    private boolean ticketTable(String operation, String data[]){
+    private boolean ticketTable(String operation, Object obj) {
         SQLiteDatabase db = this.getWritableDatabase();
+        Ticket t = (Ticket) obj;
+        System.out.println(t.toString());
         ContentValues contentValues = new ContentValues();
 
-        if (operation.equalsIgnoreCase("insert")){                                      // INSERT
-            contentValues.put("id",Integer.parseInt(data[0]));
-            contentValues.put("plate", data[1]);
-            contentValues.put("price",data[2]);                                                    // CONTENT OF THE ARRAY
-            contentValues.put("location",data[3]);
-            contentValues.put("status",Integer.parseInt(data[4]));
-            contentValues.put("approved",Integer.parseInt(data[5]));
-            contentValues.put("driverID",data[6]);
+        if (operation.equalsIgnoreCase("insert")) {                                      // INSERT
+            contentValues.put("id", t.getId());
+            contentValues.put("plate", t.getPlate());
+            contentValues.put("price", t.getPrice());                                                    // CONTENT OF THE ARRAY
+            contentValues.put("location", t.getLocation());
+            contentValues.put("status", t.getStatus());
+            contentValues.put("approved", t.getApproved());
+            contentValues.put("driverID", t.getDriverID());
+            Bitmap bitmap = t.getViolationImg();
+            ByteArrayOutputStream byteArray = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArray);    // Converting Bitmap to array of bytes
+            byte[] img = byteArray.toByteArray();
+            contentValues.put("violation", img);
             long result = db.insert("ticket", null, contentValues);
-            if (result==-1){ return false; }
-            else { return true; }
+            if (result == -1) {
+                return false;
+            } else {
+                return true;
+            }
         }
 
         return false;
     }
 
-    public Object getData(String tableName, String id){
-            if (tableName.equalsIgnoreCase("driver")){
-                return getDriver(id);
-            }else if (tableName.equalsIgnoreCase("security")){
-                return  getSecurity(id);
-            }else if (tableName.equalsIgnoreCase("ticket")){
-                return getTicket(id);
-            }else if (tableName.equalsIgnoreCase("admin")){
-                return getAdmin(id);
-            }
-                return null;
+    public Object getData(String tableName, String id) {
+        if (tableName.equalsIgnoreCase("driver")) {
+            return getDriver(id);
+        } else if (tableName.equalsIgnoreCase("security")) {
+            return getSecurity(id);
+        } else if (tableName.equalsIgnoreCase("ticket")) {
+            return getTicket(id);
+        } else if (tableName.equalsIgnoreCase("admin")) {
+            return getAdmin(id);
+        }
+        return null;
 
     }
-    private Driver getDriver(String id){
+
+    private Driver getDriver(String id) {
 
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM driver where id=? ", new String[] {id});
-        if (c.moveToFirst()){
+        Cursor c = db.rawQuery("SELECT * FROM driver where id=? ", new String[]{id});
+        if (c.moveToFirst()) {
 
-                Driver d = new Driver();
-                d.setId(c.getString(0));
-                d.setPassword(c.getString(1));
-                d.setName(c.getString(2));
-                d.setPhone(c.getString(3));
-
-                return d;
+            Driver d = new Driver();
+            d.setId(c.getString(0));
+            d.setPassword(c.getString(1));
+            d.setName(c.getString(2));
+            d.setPhone(c.getString(3));
+            d.setPlate(c.getString(4));
+            return d;
 
         }
         return null;
     }
 
-    private Security getSecurity(String id){
+    private Security getSecurity(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM security where id=? ", new String[] {id});
-        if (c.moveToFirst()){
+        Cursor c = db.rawQuery("SELECT * FROM security where id=? ", new String[]{id});
+        if (c.moveToFirst()) {
 
             Security s = new Security();
             s.setId(c.getString(0));
@@ -196,13 +206,14 @@ public class DBHelper extends SQLiteOpenHelper {
 
             return s;
 
-            }
-        return null;
         }
-    private Admin getAdmin(String id){
+        return null;
+    }
+
+    private Admin getAdmin(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM Admin where id=? ", new String[] {id});
-        if (c.moveToFirst()){
+        Cursor c = db.rawQuery("SELECT * FROM Admin where id=? ", new String[]{id});
+        if (c.moveToFirst()) {
 
             Admin a = new Admin();
             a.setId(c.getString(0));
@@ -216,11 +227,11 @@ public class DBHelper extends SQLiteOpenHelper {
         return null;
     }
 
-    private ArrayList getTicket(String id){
+    private ArrayList getTicket(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM Ticket where driverID=? ", new String[] {id});
+        Cursor c = db.rawQuery("SELECT * FROM Ticket where driverID=? ", new String[]{id});
         ArrayList arr = new ArrayList();
-        if (c.moveToFirst()){
+        if (c.moveToFirst()) {
             do {
                 Ticket ticket = new Ticket();
                 ticket.setId(Integer.parseInt(c.getString(0)));
@@ -232,13 +243,43 @@ public class DBHelper extends SQLiteOpenHelper {
                 ticket.setApproved(Integer.parseInt(c.getString(6)));
                 ticket.setDriverID(c.getString(7));
                 arr.add(ticket);
-            }while (c.moveToNext());
-           return arr;
+            } while (c.moveToNext());
+            return arr;
 
         }
         return null;
     }
 
+    public String getDriverID(String plate) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT * FROM driver where plate=? ", new String[]{plate});
+        c.moveToFirst();
+        int i = c.getCount();
 
+        if (i>0){
+            String s = c.getString(0);
+            return s;
+        }
+        return "0";
+    }
 
+    public String getTicketID() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("Select max(id) from Ticket", null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                String maxID = cursor.getString(0);
+                return maxID;
+
+            }
+            cursor.close();
+        }
+            return "0";
+    }
 }
+
+
+
+
+
