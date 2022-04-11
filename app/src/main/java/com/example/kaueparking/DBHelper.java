@@ -142,7 +142,7 @@ public class DBHelper extends SQLiteOpenHelper {
             contentValues.put("price",data[2]);                                                    // CONTENT OF THE ARRAY
             contentValues.put("location",data[3]);
             contentValues.put("status",Integer.parseInt(data[4]));
-            contentValues.put("status",Integer.parseInt(data[5]));
+            contentValues.put("approved",Integer.parseInt(data[5]));
             contentValues.put("driverID",data[6]);
             long result = db.insert("ticket", null, contentValues);
             if (result==-1){ return false; }
@@ -220,7 +220,7 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery("SELECT * FROM Ticket where driverID=? ", new String[] {id});
         ArrayList arr = new ArrayList();
-        if (c.moveToFirst()){ // iprfjw9hauiergrfpihwp9ghhwth8
+        if (c.moveToFirst()){
             do {
                 Ticket ticket = new Ticket();
                 ticket.setId(Integer.parseInt(c.getString(0)));
@@ -238,6 +238,7 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         return null;
     }
+
 
 
 }
