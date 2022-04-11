@@ -81,6 +81,20 @@ public class Ticket {
         return violationImg;
     }
 
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "id=" + id +
+                ", plate='" + plate + '\'' +
+                ", price='" + price + '\'' +
+                ", location='" + location + '\'' +
+                ", time='" + time + '\'' +
+                ", status=" + status +
+                ", approved=" + approved +
+                ", driverID='" + driverID + '\'' +
+                ", violationImg=" + violationImg +
+                '}';
+    }
 
     public void setViolationImg(Bitmap violationImg) {
         this.violationImg = violationImg;

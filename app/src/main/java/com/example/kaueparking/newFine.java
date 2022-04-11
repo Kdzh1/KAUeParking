@@ -123,27 +123,24 @@ public class newFine extends AppCompatActivity {
                                 + addresses.get(0).getAddressLine(0)));
 
 
-
+                        ticket.setLocation(addresses.get(0).getAddressLine(0));
                     } catch (IOException e) {
+                        System.out.println(e);
                         e.printStackTrace();
                     }
                 }
             }
         });
     }
-
+    Ticket ticket = new Ticket() ;
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        Ticket t = new Ticket();
-        DBHelper db = new DBHelper(this);
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                System.out.println(db.insertData(t));
-            }
-        });
         super.onActivityResult(requestCode, resultCode, data);
+
+        DBHelper db = new DBHelper(this);
+
+
         // The remaining steps after taking a picture will be here
         // Extracting the text from the picture...
         if (requestCode==101) {
@@ -179,17 +176,18 @@ public class newFine extends AppCompatActivity {
                         }
                     }
                     String ss = numbers + letters;
-                    System.out.println(ss);
-                    t.setId(1);
-                    t.setPlate(ss);
+
+                    ticket.setId(1);
+                    ticket.setPrice("150");
+                    ticket.setPlate(ss);
                     plateInfo.setText(ss);
                     String currentTime = "" + Calendar.getInstance().getTime().getHours() + ":" + Calendar.getInstance().getTime().getMinutes();
-                    t.setTime(currentTime);
+                    ticket.setTime(currentTime);
                     time.setText(currentTime); // displaying hours and minutes only
                     price.setText("150");
-                    t.setPrice("150");
 
-                    t.setDriverID(db.getDriverID(ss));
+
+                    ticket.setDriverID(db.getDriverID(ss));
 
                 }
             });
@@ -204,9 +202,16 @@ public class newFine extends AppCompatActivity {
             Bundle bundle = data.getExtras(); // From this bundle object we can extract the image
             Bitmap bitmap = (Bitmap) bundle.get("data"); // Here we have the taken picture
             violationImage.setImageBitmap(bitmap);
-            t.setViolationImg(bitmap);
+            ticket.setViolationImg(bitmap);
 
         }
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                db.insertData(ticket);
+            }
+        });
     }
 
     public void doProcess2(View view) {
