@@ -25,16 +25,16 @@ import com.google.firebase.ml.vision.text.FirebaseVisionText;
 import com.google.firebase.ml.vision.text.FirebaseVisionTextRecognizer;
 
 import java.util.Calendar;
-import java.util.Date;
 
 public class newFine extends AppCompatActivity {
-    ImageView imageView;
+    ImageView plateImage, violationImage;
     TextView plateInfo, time, price;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_fine);
-        imageView = findViewById(R.id.imageId); // To Control image
+        plateImage = findViewById(R.id.plateImage); // To Control image
+        violationImage = findViewById(R.id.violationImage);
         plateInfo = findViewById(R.id.plate);
         time = findViewById(R.id.time);
         price = findViewById(R.id.price);
@@ -53,52 +53,65 @@ public class newFine extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+
         super.onActivityResult(requestCode, resultCode, data);
         // The remaining steps after taking a picture will be here
         // Extracting the text from the picture...
-        Bundle bundle = data.getExtras(); // From this bundle object we can extract the image
-        Bitmap bitmap = (Bitmap) bundle.get("data"); // Here we have the taken picture
-        imageView.setImageBitmap(bitmap); // Display the taken picture
-        // Process the image
-        // 1.To create a FirebaseVisionImage object from a Bitmap object:
-        FirebaseVisionImage firebaseVisionImage = FirebaseVisionImage.fromBitmap(bitmap);
-        // 2.Get an instance of FirebaseVision
-        FirebaseVision firebaseVision = FirebaseVision.getInstance();
-        // 3.Create an instance of FirebaseVisionTextRecognizer
-        FirebaseVisionTextRecognizer firebaseVisionTextRecognizer = firebaseVision.getOnDeviceTextRecognizer();
-        //4.Create a task to process the image
-        Task<FirebaseVisionText> task = firebaseVisionTextRecognizer.processImage(firebaseVisionImage);
-        //5.If the task is success
-        task.addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>() {
-            @Override
-            public void onSuccess(FirebaseVisionText firebaseVisionText) {
-                String s = firebaseVisionText.getText();
-                String [] text = s.split(" ");
-                String numbers="";
-                String letters="";
-                for (int i = 0; i < text.length; i++) {
-                    if (text[i].length()>3){
-                        numbers=text[i];
+        if (requestCode==101) {
+            Bundle bundle = data.getExtras(); // From this bundle object we can extract the image
+            Bitmap bitmap = (Bitmap) bundle.get("data"); // Here we have the taken picture
+            plateImage.setImageBitmap(bitmap); // Display the taken picture
+            // Process the image
+            // 1.To create a FirebaseVisionImage object from a Bitmap object:
+            FirebaseVisionImage firebaseVisionImage = FirebaseVisionImage.fromBitmap(bitmap);
+            // 2.Get an instance of FirebaseVision
+            FirebaseVision firebaseVision = FirebaseVision.getInstance();
+            // 3.Create an instance of FirebaseVisionTextRecognizer
+            FirebaseVisionTextRecognizer firebaseVisionTextRecognizer = firebaseVision.getOnDeviceTextRecognizer();
+            //4.Create a task to process the image
+            Task<FirebaseVisionText> task = firebaseVisionTextRecognizer.processImage(firebaseVisionImage);
+            //5.If the task is success
+            task.addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>() {
+                @Override
+                public void onSuccess(FirebaseVisionText firebaseVisionText) {
+                    String s = firebaseVisionText.getText();
+                    String[] text = s.split(" ");
+                    String numbers = "";
+                    String letters = "";
+                    for (int i = 0; i < text.length; i++) {
+                        if (text[i].length() > 3) {
+                            numbers = text[i];
 
-                    }else if (text[i].length()==3){
-                        letters= text[i];
+                        } else if (text[i].length() == 3) {
+                            letters = text[i];
+                        }
                     }
+                    String ss = numbers + "\t" + letters;
+                    plateInfo.setText(ss);
+                    String currentTime = "" + Calendar.getInstance().getTime().getHours() + ":" + Calendar.getInstance().getTime().getMinutes();
+                    time.setText(currentTime); // displaying hours and minutes only
+                    price.setText("150");
+
+
                 }
-                String ss = numbers+"\t"+letters;
-                plateInfo.setText(ss);
-                String currentTime = ""+Calendar.getInstance().getTime().getHours()+":"+Calendar.getInstance().getTime().getMinutes();
-                time.setText(currentTime); // displaying hours and minutes only
-                price.setText("150");
+            });
+            //6.if the task failed
+            task.addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+            });
+        }else if (requestCode==102){
 
-
-            }
-        });
-        //6.if the task failed
-        task.addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-            }
-        });
+        }
     }
+
+    public void doProcess2(View view) {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent,102);
+
+    }
+
+
 }
