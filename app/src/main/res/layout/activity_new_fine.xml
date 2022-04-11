@@ -16,7 +16,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="doProcess"
-        android:text="take pic" />
+        android:text="Plate Picture" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="doProcess"
+        android:text="Violation Picture" />
 
     <TextView
         android:layout_width="wrap_content"
