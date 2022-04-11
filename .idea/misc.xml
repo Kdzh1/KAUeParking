@@ -13,14 +13,16 @@
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.33" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout-w936dp/activity_login.xml" value="0.11748633879781421" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_admin.xml" value="0.25" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_advice.xml" value="0.18" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_driver.xml" value="0.2" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_advice.xml" value="0.1" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_driver.xml" value="0.25" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_new_fine.xml" value="0.25" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_security.xml" value="0.21" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_start_page.xml" value="0.22" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_start_page.xml" value="0.14" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_trytest.xml" value="0.1" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/fragment_first.xml" value="0.25" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/securityhomepage.xml" value="0.25" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/instrucion.xml" value="0.15" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/securityhomepage.xml" value="0.1" />
         <entry key="..\:/Users/azooz/AndroidStudioProjects/xxxx/app/src/main/res/drawable/border.xml" value="0.121" />
         <entry key="..\:/Users/azooz/AndroidStudioProjects/xxxx/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.4" />
         <entry key="..\:/Users/azooz/AndroidStudioProjects/xxxx/app/src/main/res/layout-w936dp/activity_login.xml" value="0.1453125" />
@@ -35,10 +37,7 @@
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_admin.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_driver.xml" value="0.25" />
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_new_fine.xml" value="0.264" />
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_security.xml" value="0.25" />
-        <entry key="..\:/Users/lenovo/AndroidStudioProjects/KAUeParking/app/src/main/res/layout/activity_new_fine.xml" value="0.264" />
-        <entry key="..\:/Users/lenovo/AndroidStudioProjects/KAUeParking/app/src/main/res/layout/securityhomepage.xml" value="0.19010416666666666" />
       </map>
     </option>
   </component>
@@ -48,5 +47,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22" />
+      </ProjectState>
+    </option>
   </component>
 </project>

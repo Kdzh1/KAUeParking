@@ -1,14 +1,11 @@
-
-
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminActivity"
+    android:background="@color/skr"
     android:orientation="vertical"
-    android:background="@color/skr">
+    tools:context=".AdminActivity">
 
 
     <ScrollView
@@ -48,26 +45,25 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:background="@drawable/border"
                         android:gravity="center"
-                        android:orientation="vertical"
-                        android:background="@drawable/border">
+                        android:orientation="vertical">
 
-                        <ImageView
+
+                        <ImageButton
+                            android:id="@+id/addNewTktBtn"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
-                            android:background="@drawable/border"
-                            android:padding="10dp"
-                            android:src="@drawable/ic_violation_ticket"/>
+                            android:background="@drawable/ic_violation_ticket"
+                            android:padding="10dp" />
 
                         <TextView
-                            android:id="@+id/userID"
+                            android:id="@+id/addNewTktTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:text="Add new ticket"
                             android:textStyle="bold" />
-
-
 
 
                     </LinearLayout>
@@ -85,16 +81,17 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
                         android:background="@drawable/border"
+                        android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
+
+                        <ImageButton
+                            android:id="@+id/instructionBtn"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
-                            android:background="@drawable/border"
-                            android:padding="10dp"
-                            android:src="@drawable/instricon" />
+                            android:background="@drawable/insicon"
+                            android:padding="10dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -102,8 +99,6 @@
                             android:layout_marginTop="10dp"
                             android:text="Instruction"
                             android:textStyle="bold" />
-
-
 
 
                     </LinearLayout>
@@ -134,19 +129,20 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
+
+                        <ImageButton
+                            android:id="@+id/infoBtn"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
-                            android:background="@drawable/border"
                             android:padding="10dp"
-                            android:src ="@drawable/myinfoicon" />
+                            android:background="@drawable/myinfoicon"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="My information"
                             android:layout_marginBottom="30dp"
+                            android:text="My information"
                             android:textStyle="bold" />
 
 

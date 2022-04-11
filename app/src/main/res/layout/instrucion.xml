@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/skr"
+    tools:context=".Instruction">
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="411dp"
+        android:layout_height="482dp"
+        android:layout_alignParentBottom="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.767">
+
+        <TextView
+            android:id="@+id/insTxt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:text="For Admin:\n\n - Your resonsipility is to manage and monitor Secirity men.\n\n - You will recieve a congestion from drivers, You have to deal with it.\n\n\n  For Security:\n\n - Be sure that the driver parked wrongly before you create a ticket for him.\n\n - You should take photo for both plate and the situation of the car.\n\n\n  For Driver:\n\n - Be sure that you are parking correctly.\n\n  - Your tickets may affect on your carrer in the university.\n\n  - You may not be able graduate untill you pay all your tickets.\n\n  - You can pay using this App &quot;Kau e-Parking&quot;.\n\n  - Don't affect on the other parkings by your wrongly parking.\n\n  - You can make a congestion if feel that theres something wrong with your tickets.    "
+            android:textSize="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="412dp"
+        android:layout_height="184dp"
+        android:background="@color/wgreen"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/instricon" />
+
+    <LinearLayout
+        android:layout_width="415dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"></LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
