@@ -38,6 +38,8 @@ public class newFine extends AppCompatActivity {
         plateInfo = findViewById(R.id.plate);
         time = findViewById(R.id.time);
         price = findViewById(R.id.price);
+        DBHelper db = new DBHelper(this);
+        Ticket ticket = new Ticket();
         // Check if permission is granted for camera
         if (checkSelfPermission(Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){ // If the permission is not granted
             requestPermissions(new String[]{Manifest.permission.CAMERA},101); // requestCode can accept any value
@@ -106,6 +108,8 @@ public class newFine extends AppCompatActivity {
             Bundle bundle = data.getExtras(); // From this bundle object we can extract the image
             Bitmap bitmap = (Bitmap) bundle.get("data"); // Here we have the taken picture
             violationImage.setImageBitmap(bitmap);
+
+
         }
     }
 

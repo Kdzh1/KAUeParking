@@ -1,5 +1,7 @@
 package com.example.kaueparking;
 
+import android.graphics.Bitmap;
+
 public class Ticket {
     private int id;
     private String plate;
@@ -9,7 +11,7 @@ public class Ticket {
     private int status;
     private int approved;
     private String driverID;
-
+    private Bitmap violationImg;
 
     public int getId() {
         return id;
