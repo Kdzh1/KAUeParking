@@ -80,7 +80,8 @@
                     android:layout_margin="10dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:foreground="?android:attr/selectableItemBackground"/>
+                    android:foreground="?android:attr/selectableItemBackground"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
             </LinearLayout>
 
@@ -133,7 +134,8 @@
                     android:layout_margin="10dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:foreground="?android:attr/selectableItemBackground"/>
+                    android:foreground="?android:attr/selectableItemBackground"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
 
             </LinearLayout>
