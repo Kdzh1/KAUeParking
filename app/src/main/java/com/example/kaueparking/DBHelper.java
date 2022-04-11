@@ -43,6 +43,7 @@ public class DBHelper extends SQLiteOpenHelper {
         } else
             return false;
 
+
     }
 
     public boolean deleteData(String tableName, String data[]) {

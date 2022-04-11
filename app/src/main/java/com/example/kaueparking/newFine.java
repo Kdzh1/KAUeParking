@@ -177,7 +177,7 @@ public class newFine extends AppCompatActivity {
                     }
                     String ss = numbers + letters;
 
-                    ticket.setId(1);
+                    ticket.setId(Integer.parseInt(db.getTicketID())+1);
                     ticket.setPrice("150");
                     ticket.setPlate(ss);
                     plateInfo.setText(ss);
