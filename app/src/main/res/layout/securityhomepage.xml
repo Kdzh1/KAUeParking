@@ -6,10 +6,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".SecurityActivity"
     android:orientation="vertical"
 
-    android:background="@color/black">
+    android:background="@color/skr">
 
 
     <ScrollView
@@ -27,7 +27,7 @@
                 android:layout_height="165dp"
                 android:clipToPadding="false"
                 android:gravity="center"
-                android:background="@drawable/logo"
+                android:background="@drawable/newlo"
                 android:orientation="horizontal"/>
 
             <LinearLayout
