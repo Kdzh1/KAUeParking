@@ -142,7 +142,7 @@ public class DBHelper extends SQLiteOpenHelper {
             contentValues.put("price",data[2]);                                                    // CONTENT OF THE ARRAY
             contentValues.put("location",data[3]);
             contentValues.put("status",Integer.parseInt(data[4]));
-            contentValues.put("status",Integer.parseInt(data[5]));
+            contentValues.put("approved",Integer.parseInt(data[5]));
             contentValues.put("driverID",data[6]);
             long result = db.insert("ticket", null, contentValues);
             if (result==-1){ return false; }
