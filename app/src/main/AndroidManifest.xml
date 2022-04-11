@@ -13,7 +13,7 @@
         android:theme="@style/Theme.KAUeParking">
         <activity
             android:name=".StartPage"
-            android:exported="false" />
+            android:exported="true" />
 
         <meta-data
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"

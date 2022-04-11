@@ -18,5 +18,5 @@
     <color name="greenbutton">#05386b</color>
     <color name="sindbadColor">#182F3D</color>
     <color name="skr">#EDF5E1</color>
-
+    <color name="wgreen">#8ee4af</color> // white green
 </resources>

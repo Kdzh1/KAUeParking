@@ -23,11 +23,11 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="165dp"
+                android:layout_height="186dp"
+                android:background="@drawable/newlo"
                 android:clipToPadding="false"
                 android:gravity="center"
-                android:background="@drawable/newlo"
-                android:orientation="horizontal"/>
+                android:orientation="horizontal" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -57,7 +57,7 @@
                             android:layout_height="64dp"
                             android:background="@drawable/border"
                             android:padding="10dp"
-                            android:src="@drawable/ic_violation_ticket"/>
+                            android:src="@drawable/addpersonicon"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -93,7 +93,7 @@
                             android:layout_height="64dp"
                             android:background="@drawable/border"
                             android:padding="10dp"
-                            android:src="@drawable/payicon" />
+                            android:src="@drawable/editpersonicon" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -138,7 +138,7 @@
                             android:layout_height="64dp"
                             android:background="@drawable/border"
                             android:padding="10dp"
-                            android:src ="@drawable/instricon" />
+                            android:src ="@drawable/removepersonicon" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -174,7 +174,7 @@
                             android:layout_height="64dp"
                             android:background="@drawable/border"
                             android:padding="10dp"
-                            android:src="@drawable/ic_wrong_parking" />
+                            android:src="@drawable/objection" />
 
                         <TextView
                             android:layout_width="wrap_content"

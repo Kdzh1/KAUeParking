@@ -6,9 +6,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecurityActivity"
+    tools:context=".AdminActivity"
     android:orientation="vertical"
-
     android:background="@color/skr">
 
 
@@ -24,11 +23,11 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="165dp"
+                android:layout_height="187dp"
+                android:background="@drawable/newlo"
                 android:clipToPadding="false"
                 android:gravity="center"
-                android:background="@drawable/newlo"
-                android:orientation="horizontal"/>
+                android:orientation="horizontal" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -56,7 +55,7 @@
                         <ImageView
                             android:layout_width="64dp"
                             android:layout_height="64dp"
-                            app:srcCompat="@drawable/ic_baseline_add_24"
+                            android:background="@drawable/border"
                             android:padding="10dp"
                             android:src="@drawable/ic_violation_ticket"/>
 
@@ -64,7 +63,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:text="Create new ticket"
+                            android:text="Add new ticket"
                             android:textStyle="bold" />
 
 
@@ -80,31 +79,13 @@
                     android:layout_margin="10dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    tools:ignore="SpeakableTextPresentCheck" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="165dp"
-                android:clipToPadding="false"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/Import_card"
-                    android:layout_width="160dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="10dp"
-                    android:clickable="true"
-                    android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
+                        android:background="@drawable/border"
                         android:orientation="vertical">
 
                         <ImageView
@@ -112,13 +93,13 @@
                             android:layout_height="64dp"
                             android:background="@drawable/border"
                             android:padding="10dp"
-                            android:src ="@drawable/instricon" />
+                            android:src="@drawable/instricon" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:text="Advices"
+                            android:text="Instruction"
                             android:textStyle="bold" />
 
 
@@ -127,18 +108,8 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/Export_card"
-                    android:layout_width="160dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="10dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    tools:ignore="SpeakableTextPresentCheck" />
-
-
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="165dp"
@@ -158,6 +129,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:background="@drawable/border"
                         android:gravity="center"
                         android:orientation="vertical">
 
