@@ -52,12 +52,12 @@
                         android:orientation="vertical"
                         android:background="@drawable/border">
 
-                        <ImageView
+                        <ImageButton
+                            android:id="@+id/addNewSecBtn"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
-                            android:background="@drawable/border"
-                            android:padding="10dp"
-                            android:src="@drawable/addpersonicon"/>
+                            android:background="@drawable/addpersonicon"
+                            android:padding="10dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -88,12 +88,12 @@
                         android:background="@drawable/border"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <ImageButton
+                            android:id="@+id/editSecBtn"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
-                            android:background="@drawable/border"
-                            android:padding="10dp"
-                            android:src="@drawable/editpersonicon" />
+                            android:background="@drawable/editpersonicon"
+                            android:padding="10dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -133,12 +133,12 @@
                         android:background="@drawable/border"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <ImageButton
+                            android:id="@+id/removeSecBtn"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
-                            android:background="@drawable/border"
-                            android:padding="10dp"
-                            android:src ="@drawable/removepersonicon" />
+                            android:background="@drawable/removepersonicon"
+                            android:padding="10dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -169,12 +169,12 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <ImageButton
+                            android:id="@+id/objectionBtn"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
-                            android:background="@drawable/border"
-                            android:padding="10dp"
-                            android:src="@drawable/objection" />
+                            android:background="@drawable/objection"
+                            android:padding="10dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -212,12 +212,12 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <ImageButton
+                            android:id="@+id/myInfoBtn"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
-                            android:background="@drawable/border"
-                            android:padding="10dp"
-                            android:src ="@drawable/myinfoicon" />
+                            android:background="@drawable/myinfoicon"
+                            android:padding="10dp" />
 
                         <TextView
                             android:layout_width="wrap_content"

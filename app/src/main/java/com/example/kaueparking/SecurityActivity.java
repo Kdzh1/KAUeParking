@@ -19,15 +19,8 @@ public class SecurityActivity extends AppCompatActivity {
 
         // attributes in this class
         ImageButton newFine = findViewById(R.id.addNewTktBtn); //the button of new ticket (its imgBtn not just Btn)
-        ImageButton instructionBtn =(ImageButton)findViewById(R.id.instructionBtn);
-        ImageButton infoBtn=(ImageButton)findViewById(R.id.infoBtn);
-        //
-
-        // Instructions
-        instructionBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) { openInstruction(); }
-        });
+        ImageButton instructionBtn = (ImageButton) findViewById(R.id.instructionBtn);
+        ImageButton infoBtn = (ImageButton) findViewById(R.id.infoBtn);
         //
 
         // Add new ticket
@@ -39,28 +32,41 @@ public class SecurityActivity extends AppCompatActivity {
         });
         //
 
+        // Instructions
+        instructionBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openInstruction();
+            }
+        });
+        //
+
         // My information
         infoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) { openMyinformation(); }
+            public void onClick(View view) {
+                openMyinformation();
+            }
         });
         //
     }
-    public void openInstruction(){
-        Intent Insintent= new Intent(this, Instruction.class); // Instruction Intent
+
+    public void openInstruction() {
+        Intent Insintent = new Intent(this, Instruction.class); // Instruction Intent
         startActivity(Insintent);
     }
-    public void openNewFine(){
 
-            Intent Tktintent = new Intent(this, newFine.class); // Add new Ticket Intent
-            startActivity(Tktintent);
-
-    }
-    public void openMyinformation(){
+    public void openMyinformation() {
 
         Intent Infointent = new Intent(this, myinformation.class); // Add new Ticket Intent
         startActivity(Infointent);
 
     }
 
+    public void openNewFine() {
+
+        Intent Tktintent = new Intent(this, newFine.class); // Add new Ticket Intent
+        startActivity(Tktintent);
+
+    }
 }

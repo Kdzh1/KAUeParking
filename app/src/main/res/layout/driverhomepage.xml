@@ -52,12 +52,12 @@
                         android:orientation="vertical"
                         android:background="@drawable/border">
 
-                        <ImageView
+                        <ImageButton
+                            android:id="@+id/payBtn"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
-                            android:background="@drawable/border"
-                            android:padding="10dp"
-                            android:src="@drawable/payicon"/>
+                            android:background="@drawable/payicon"
+                            android:padding="10dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -88,12 +88,12 @@
                         android:background="@drawable/border"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <ImageButton
+                            android:id="@+id/historeBtn"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
-                            android:background="@drawable/border"
-                            android:padding="10dp"
-                            android:src="@drawable/historyicon" />
+                            android:background="@drawable/historyicon"
+                            android:padding="10dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -133,12 +133,12 @@
                         android:background="@drawable/border"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <ImageButton
+                            android:id="@+id/driverinstructionBtn"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
-                            android:background="@drawable/border"
-                            android:padding="10dp"
-                            android:src ="@drawable/instricon" />
+                            android:background="@drawable/instricon"
+                            android:padding="10dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -169,12 +169,12 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <ImageButton
+                            android:id="@+id/driverObjectionBtn"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
-                            android:background="@drawable/border"
-                            android:padding="10dp"
-                            android:src="@drawable/objection" />
+                            android:background="@drawable/ic_violation_ticket"
+                            android:padding="10dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -212,12 +212,12 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
+                        <ImageButton
+                            android:id="@+id/driverInfoBtn"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
-                            android:background="@drawable/border"
-                            android:padding="10dp"
-                            android:src ="@drawable/myinfoicon" />
+                            android:background="@drawable/myinfoicon"
+                            android:padding="10dp" />
 
                         <TextView
                             android:layout_width="wrap_content"

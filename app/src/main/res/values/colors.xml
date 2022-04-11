@@ -19,4 +19,5 @@
     <color name="sindbadColor">#182F3D</color>
     <color name="skr">#EDF5E1</color>
     <color name="wgreen">#8ee4af</color> // white green
+    <color name="dgreen">#379683</color> // dark green
 </resources>
