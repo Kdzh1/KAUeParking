@@ -147,7 +147,7 @@ public class DBHelper extends SQLiteOpenHelper {
         if (operation.equalsIgnoreCase("insert")) {                                      // INSERT
             contentValues.put("id", t.getId());
             contentValues.put("plate", t.getPlate());
-            contentValues.put("price", t.getPrice());                                                    // CONTENT OF THE ARRAY
+            contentValues.put("price", t.getPrice());
             contentValues.put("location", t.getLocation());
             contentValues.put("time",t.getTime());
             contentValues.put("status", t.getStatus());
@@ -163,6 +163,19 @@ public class DBHelper extends SQLiteOpenHelper {
                 return false;
             } else {
                 return true;
+            }
+        }else  if (operation.equalsIgnoreCase("delete")){
+            Cursor cursor = db.rawQuery("select * from ticket where id = ?", new String[]{t.getId()+""});
+            if (cursor.getCount() > 0){
+                long result = db.delete("ticket", "id=?", new String[]{t.getId()+""});
+                if (result == -1) {
+                    cursor.close();
+                    return false;
+
+                } else {
+                    cursor.close();
+                    return true;
+                }
             }
         }
 
@@ -236,7 +249,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return null;
     }
 
-    private ArrayList getTicket(String id) {
+    private ArrayList getTicket(String id) { // get all tickets that the driver have
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery("SELECT * FROM Ticket where driverID=? ", new String[]{id});
         ArrayList arr = new ArrayList();
@@ -275,7 +288,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return "0";
     }
 
-    public String getTicketID() { // to assign ID to new ticket by returnng the max id in the database
+    public String getTicketID() { // to assign ID to new ticket by returning the max id in the database
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("Select max(id) from Ticket", null);
         if (cursor != null) {
@@ -289,6 +302,36 @@ public class DBHelper extends SQLiteOpenHelper {
         }
             return "0";
     }
+
+    public boolean makeObjection(String ticketID){ // this method is for driver to make objection
+        SQLiteDatabase db = this.getWritableDatabase();
+        Ticket t = (Ticket) this.getData("ticket",ticketID);
+        ContentValues contentValues = new ContentValues();
+        if (t.getApproved()!=2) { // if the approved attribute value is 2 this means that the ticket is already checked and approved
+            contentValues.put("approved",0);
+            long result = db.update("ticket", contentValues,"id=?", new String[]{t.getId() + ""});
+            if (result == -1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean approveTicket(String ticketID){ // this method is for admin to approve that the ticket is deserved
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("approved",2); // 2 means that the ticket can not be objected any more
+        long result = db.update("ticket", contentValues,"id=?", new String[]{ticketID});
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+
 }
 
 
