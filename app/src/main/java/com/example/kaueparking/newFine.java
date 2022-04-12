@@ -168,7 +168,7 @@ public class newFine extends AppCompatActivity {
                     String numbers = "";
                     String letters = "";
                     for (int i = 0; i < text.length; i++) {
-                        if (text[i].length() > 3) {
+                        if (text[i].length() > 1) {
                             numbers = text[i];
 
                         } else if (text[i].length() == 3) {
