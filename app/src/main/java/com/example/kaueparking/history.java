@@ -12,8 +12,8 @@ public class history extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
 
-        Button bt=findViewById(R.id.obj);
+        //Button bt=findViewById(R.id.obj);
 
-        bt.setText("done!");
+        //bt.setText("done!");
     }
 }
