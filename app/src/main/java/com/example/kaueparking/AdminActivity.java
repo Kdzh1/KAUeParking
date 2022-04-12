@@ -30,7 +30,7 @@ public class AdminActivity extends AppCompatActivity {
     }
         public void openMyinformation(String id) {
 
-            Intent Infointent = new Intent(this, myinformation.class); // Add new Ticket Intent
+            Intent Infointent = new Intent(this, information.class); // Add new Ticket Intent
             Infointent.putExtra("ID",id);
             startActivity(Infointent);
 

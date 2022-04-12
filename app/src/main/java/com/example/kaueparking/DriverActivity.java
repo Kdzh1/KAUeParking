@@ -37,7 +37,7 @@ public class DriverActivity extends AppCompatActivity {
 
     public void openMyinformation(String id) {
 
-        Intent Infointent = new Intent(this, myinformation.class); // Add new Ticket Intent
+        Intent Infointent = new Intent(this, information.class); // Add new Ticket Intent
         startActivity(Infointent);
         Infointent.putExtra("id",id);
     }

@@ -85,18 +85,21 @@ public class MainActivity extends AppCompatActivity {
 
     private void openAdmin(String id){
         Intent intent = new Intent(this, AdminActivity.class);
-        startActivity(intent);
         intent.putExtra("id",id);
+        startActivity(intent);
+
     }
 
     private void openSecurity(String id){
         Intent intent = new Intent(this, SecurityActivity.class);
-        startActivity(intent);
         intent.putExtra("id",id);
+        startActivity(intent);
+
     }
     private void openDriver(String id){
         Intent intent = new Intent(this, DriverActivity.class);
-        startActivity(intent);
+
         intent.putExtra("id",id);
+        startActivity(intent);
     }
 }

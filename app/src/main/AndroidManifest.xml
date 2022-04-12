@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KAUeParking">
         <activity
-            android:name=".myinformation"
+            android:name=".information"
             android:exported="false" />
         <activity
             android:name=".Instruction"

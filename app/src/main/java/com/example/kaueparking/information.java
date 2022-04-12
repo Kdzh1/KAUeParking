@@ -5,18 +5,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class myinformation extends AppCompatActivity {
+public class information extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_information);
         TextView name, id, password , phone;
-        name = findViewById(R.id.name);
+        name = findViewById(R.id.myName);
         id = findViewById(R.id.id);
         password = findViewById(R.id.password);
         phone = findViewById(R.id.phone);
-        setContentView(R.layout.activity_myinformation);
-        String ID= getIntent().getStringExtra("ID");
+
+        Bundle b = getIntent().getExtras();
+        String ID = b.getString("ID");
+        System.out.println(ID);
         DBHelper db = new DBHelper(this);
         if (ID.startsWith("0")){
             Admin a = (Admin) db.getData("admin",ID);
@@ -26,7 +29,10 @@ public class myinformation extends AppCompatActivity {
             phone.setText(a.getPhone());
         }else if (ID.startsWith("1")){
             Security s = (Security) db.getData("security",ID);
-            name.setText(s.getName());
+            System.out.println(s.toString());
+            String sName= s.getName();
+            System.out.println(sName);
+            name.setText(sName);
             id.setText(s.getId());
             password.setText(s.getPassword());
             phone.setText(s.getPhone());
@@ -37,11 +43,5 @@ public class myinformation extends AppCompatActivity {
             password.setText(d.getPassword());
             phone.setText(d.getPhone());
         }
-
     }
-
-
-
-
-
 }
