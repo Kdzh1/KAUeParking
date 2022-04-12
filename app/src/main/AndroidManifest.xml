@@ -14,10 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KAUeParking">
         <activity
-            android:name=".objection"
+            android:name=".history"
             android:exported="false" />
         <activity
-            android:name=".myinformation"
+
             android:name=".information"
             android:exported="false" />
         <activity
