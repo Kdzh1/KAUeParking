@@ -171,6 +171,7 @@ public class newFine extends AppCompatActivity {
                         if (text[i].length() > 1) {
                             numbers = text[i];
 
+
                         } else if (text[i].length() == 3) {
                             letters = text[i];
                         }
