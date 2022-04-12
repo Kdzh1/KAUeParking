@@ -86,8 +86,10 @@ public class DBHelper extends SQLiteOpenHelper {
             if (cursor.getCount() > 0) {
                 long result = db.delete("driver", "id=?", new String[]{d.getId()}); /* will always return true even if it is null value */
                 if (result == -1) {
+                    cursor.close();
                     return false;
                 } else {
+                    cursor.close();
                     return true;
                 }
             }
@@ -123,8 +125,11 @@ public class DBHelper extends SQLiteOpenHelper {
             if (cursor.getCount() > 0) {
                 long result = db.delete("security", "id=?", new String[]{s.getId()}); /* delete will always return true even if it is null value */
                 if (result == -1) {
+                    cursor.close();
                     return false;
+
                 } else {
+                    cursor.close();
                     return true;
                 }
             }
@@ -190,6 +195,7 @@ public class DBHelper extends SQLiteOpenHelper {
             d.setName(c.getString(2));
             d.setPhone(c.getString(3));
             d.setPlate(c.getString(4));
+            c.close();
             return d;
 
         }
@@ -206,7 +212,7 @@ public class DBHelper extends SQLiteOpenHelper {
             s.setPassword(c.getString(1));
             s.setName(c.getString(2));
             s.setPhone(c.getString(3));
-
+            c.close();
             return s;
 
         }
@@ -223,7 +229,7 @@ public class DBHelper extends SQLiteOpenHelper {
             a.setPassword(c.getString(1));
             a.setName(c.getString(2));
             a.setPhone(c.getString(3));
-
+            c.close();
             return a;
 
         }
@@ -247,13 +253,14 @@ public class DBHelper extends SQLiteOpenHelper {
                 ticket.setDriverID(c.getString(7));
                 arr.add(ticket);
             } while (c.moveToNext());
+            c.close();
             return arr;
 
         }
         return null;
     }
 
-    public String getDriverID(String plate) {
+    public String getDriverID(String plate) { // to fill ticket driverID attribute by passing the plate number
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery("SELECT * FROM driver where plate=? ", new String[]{plate});
         c.moveToFirst();
@@ -261,12 +268,14 @@ public class DBHelper extends SQLiteOpenHelper {
 
         if (i>0){
             String s = c.getString(0);
+            c.close();
             return s;
         }
+        c.close();
         return "0";
     }
 
-    public String getTicketID() {
+    public String getTicketID() { // to assign ID to new ticket by returnng the max id in the database
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("Select max(id) from Ticket", null);
         if (cursor != null) {
