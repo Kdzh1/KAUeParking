@@ -51,24 +51,23 @@
         <TextView
             android:id="@+id/plate"
             android:layout_width="150sp"
-
             android:layout_height="30dp"
-            android:textColor="@color/skr"
-            android:text="The plate: "
+            android:text="plate: "
+            android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.115"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/carplatephotoimgbtn"
-            app:layout_constraintVertical_bias="0.173" />
+            app:layout_constraintVertical_bias="0.166" />
 
         <TextView
             android:id="@+id/time"
 
             android:layout_width="150dp"
             android:layout_height="34dp"
-            android:textColor="@color/skr"
-            android:text="The time: "
+            android:textColor="@color/black"
+            android:text="Time: "
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.115"
@@ -82,8 +81,8 @@
 
             android:layout_width="175sp"
             android:layout_height="30dp"
-            android:textColor="@color/skr"
-            android:text="The price of ticket: "
+            android:textColor="@color/black"
+            android:text="Price Of Ticket: "
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.117"
