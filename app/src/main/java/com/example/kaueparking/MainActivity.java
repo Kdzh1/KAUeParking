@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                     a = (Admin) db.getData("admin",text); //BRING THE DATA FROM DATABASE TO COMPARE IT
 
                     if(a!= null && a.getPassword().equals(pass)){
-                        openAdmin();                    // IF THE PASSWORD IS CORRECT THEN GO TO NEXT MENU
+                        openAdmin(text);                    // IF THE PASSWORD IS CORRECT THEN GO TO NEXT MENU
                     }else{
 
                         alert.setTitle(" ");
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                     Security s = new Security();
                     s = (Security) db.getData("security", text);
                     if (s!=null && s.getPassword().equals(pass)){
-                        openSecurity();
+                        openSecurity(text);
                     }else{
 
                         alert.setTitle(" ");
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                     Driver d = new Driver();
                     d= (Driver) db.getData("driver", text);
                     if (d!=null && d.getPassword().equals(pass)){
-                        openDriver();
+                        openDriver(text);
                     }else{
                         alert.setTitle(" ");
                         alert.setMessage("Wrong ID or Password");
@@ -83,17 +83,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void openAdmin(){
+    private void openAdmin(String id){
         Intent intent = new Intent(this, AdminActivity.class);
         startActivity(intent);
+        intent.putExtra("id",id);
     }
 
-    private void openSecurity(){
+    private void openSecurity(String id){
         Intent intent = new Intent(this, SecurityActivity.class);
         startActivity(intent);
+        intent.putExtra("id",id);
     }
-    private void openDriver(){
+    private void openDriver(String id){
         Intent intent = new Intent(this, DriverActivity.class);
         startActivity(intent);
+        intent.putExtra("id",id);
     }
 }
