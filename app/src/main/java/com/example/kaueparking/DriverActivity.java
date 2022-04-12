@@ -12,7 +12,7 @@ public class DriverActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.driverhomepage);
-
+        String driverID = getIntent().getStringExtra("id");
         ImageButton instructionBtn = (ImageButton) findViewById(R.id.driverinstructionBtn);
         ImageButton infoBtn = (ImageButton) findViewById(R.id.driverInfoBtn);
         // Instructions
@@ -28,18 +28,18 @@ public class DriverActivity extends AppCompatActivity {
         infoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openMyinformation();
+                openMyinformation(driverID);
             }
         });
 
 
     }
 
-    public void openMyinformation() {
+    public void openMyinformation(String id) {
 
-        Intent Infointent = new Intent(this, myinformation.class); // Add new Ticket Intent
+        Intent Infointent = new Intent(this, information.class); // Add new Ticket Intent
         startActivity(Infointent);
-
+        Infointent.putExtra("id",id);
     }
 
     public void openInstruction() {

@@ -18,6 +18,7 @@
             android:exported="false" />
         <activity
             android:name=".myinformation"
+            android:name=".information"
             android:exported="false" />
         <activity
             android:name=".Instruction"

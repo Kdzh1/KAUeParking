@@ -12,7 +12,7 @@ public class AdminActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.adminhomepage);
-
+        String adminID = getIntent().getStringExtra("id");
 
         ImageButton infoBtn = (ImageButton) findViewById(R.id.myInfoBtn);
 
@@ -21,16 +21,17 @@ public class AdminActivity extends AppCompatActivity {
         infoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openMyinformation();
+                openMyinformation(adminID);
             }
 
 
         });
 
     }
-        public void openMyinformation() {
+        public void openMyinformation(String id) {
 
-            Intent Infointent = new Intent(this, myinformation.class); // Add new Ticket Intent
+            Intent Infointent = new Intent(this, information.class); // Add new Ticket Intent
+            Infointent.putExtra("ID",id);
             startActivity(Infointent);
 
         }
