@@ -199,7 +199,7 @@ public class newFine extends AppCompatActivity {
                 }
             });
         }else if (requestCode==102){
-            Bundle bundle = data.getExtras(); // From this bundle object we can extract the image
+            Bundle bundle = data.getExtras(); // From this bundle object we can get the image
             Bitmap bitmap = (Bitmap) bundle.get("data"); // Here we have the taken picture
             violationImage.setImageBitmap(bitmap);
             ticket.setViolationImg(bitmap);
