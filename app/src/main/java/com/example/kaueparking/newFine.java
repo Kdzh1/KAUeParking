@@ -145,7 +145,7 @@ public class newFine extends AppCompatActivity {
         // Extracting the text from the picture...
         if (requestCode==101) {
 
-            Bundle bundle = data.getExtras(); // From this bundle object we can extract the image
+            Bundle bundle = data.getExtras(); // From this bundle object we can get the image
             Bitmap bitmap = (Bitmap) bundle.get("data"); // Here we have the taken picture
             plateImage.setImageBitmap(bitmap); // Display the taken picture
             // Process the image
