@@ -17,13 +17,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Button btn = (Button)findViewById(R.id.login);
+        Button btn = findViewById(R.id.login);
         DBHelper db = new DBHelper(this);
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText userID = (EditText) findViewById(R.id.userid);
+                EditText userID = findViewById(R.id.userid);
                 EditText password = findViewById(R.id.userpass);
 
                 String text = userID.getText().toString();
@@ -46,8 +46,7 @@ public class MainActivity extends AppCompatActivity {
                         alert.create().show();
                     }
                 }else if (text.startsWith("1")){
-                    Security s = new Security();
-                    s = (Security) db.getData("security", text);
+                    Security s = (Security) db.getData("security", text);
                     if (s!=null && s.getPassword().equals(pass)){
                         openSecurity(text);
                     }else{

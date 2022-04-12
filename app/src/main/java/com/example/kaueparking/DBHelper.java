@@ -292,8 +292,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public String getTicketID() { // to assign ID to new ticket by returning the max id in the database
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("Select max(id) from Ticket", null);
-        if (cursor != null) {
-            cursor.moveToFirst();
+        if (cursor.moveToFirst()) {
+
             while (!cursor.isAfterLast()) {
                 String maxID = cursor.getString(0);
                 return maxID;
