@@ -25,6 +25,9 @@ public class history extends AppCompatActivity {
         for (int i = 0; i < tickets.length; i++) {
             tickets[i]=(Ticket) tick.get(i);
         }
+        for (int i = 0; i < tickets.length; i++) {
+            System.out.println(tickets[i].toString());
+        }
 
         int xml=R.layout.row;
         TicketAdapter ticketAdapter = new TicketAdapter(history.this,xml,tickets);
