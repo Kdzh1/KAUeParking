@@ -12,8 +12,9 @@ public class AdminActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.adminhomepage);
-        String adminID = getIntent().getStringExtra("id");
-
+        Bundle b = getIntent().getExtras();
+        String adminID = b.getString("id");
+        System.out.println(adminID);
         ImageButton infoBtn = (ImageButton) findViewById(R.id.myInfoBtn);
 
 

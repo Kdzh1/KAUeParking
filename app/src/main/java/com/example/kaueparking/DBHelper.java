@@ -258,7 +258,8 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public ArrayList getTicket(String id) { // get all tickets that the driver have
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM Ticket where driverID=? ", new String[]{id});
+        Cursor c = db.rawQuery("SELECT * from ticket where driverID=?", new String []{id});
+
         ArrayList arr = new ArrayList();
         if (c.moveToFirst()) {
             do {

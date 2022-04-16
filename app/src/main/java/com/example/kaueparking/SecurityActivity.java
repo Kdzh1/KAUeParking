@@ -66,6 +66,7 @@ public class SecurityActivity extends AppCompatActivity {
 
     }
 
+
     public void openNewFine() {
 
         Intent Tktintent = new Intent(this, newFine.class); // Add new Ticket Intent

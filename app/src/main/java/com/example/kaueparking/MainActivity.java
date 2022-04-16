@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         Button btn = findViewById(R.id.login);
         DBHelper db = new DBHelper(this);
         AlertDialog.Builder alert = new AlertDialog.Builder(this);

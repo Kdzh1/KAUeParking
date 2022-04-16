@@ -17,12 +17,14 @@ public class history extends AppCompatActivity {
         DBHelper db = new DBHelper(this);
         Bundle b = getIntent().getExtras();
         String ID = b.getString("ID");
-
+        System.out.println("PASSED ID: "+ID);
         ArrayList tick = db.getTicket(ID);
 
 
-
-        Ticket[] tickets=(Ticket[]) tick.toArray();
+        Ticket[] tickets = new Ticket[tick.size()];
+        for (int i = 0; i < tickets.length; i++) {
+            tickets[i]=(Ticket) tick.get(i);
+        }
 
         int xml=R.layout.row;
         TicketAdapter ticketAdapter = new TicketAdapter(history.this,xml,tickets);
