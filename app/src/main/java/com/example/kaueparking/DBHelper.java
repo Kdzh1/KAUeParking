@@ -21,11 +21,16 @@ public class DBHelper extends SQLiteOpenHelper {
         DB.execSQL("CREATE TABLE admin (id TEXT UNIQUE, password TEXT,name TEXT,phone TEXT, PRIMARY KEY(id))");
         DB.execSQL("CREATE TABLE driver (id TEXT UNIQUE, password TEXT, name TEXT, phone TEXT, plate TEXT , PRIMARY KEY(id));");
         DB.execSQL("CREATE TABLE security (id TEXT UNIQUE, password TEXT, name TEXT, phone TEXT, PRIMARY KEY(id));");
-        DB.execSQL("CREATE TABLE ticket (id INTEGER UNIQUE,plate TEXT,price TEXT,location TEXT, time TEXT, status INTEGER DEFAULT 0, approved INTEGER DEFAULT 1, driverID TEXT, violation BLOB, PRIMARY KEY(id), FOREIGN KEY(driverID)REFERENCES driver (id));");
+        DB.execSQL("CREATE TABLE ticket (id INTEGER UNIQUE,plate TEXT,price TEXT,location TEXT, time TEXT, status INTEGER DEFAULT 0," +
+                " approved INTEGER DEFAULT 1, driverID TEXT, violation BLOB, PRIMARY KEY(id), FOREIGN KEY(driverID)REFERENCES driver (id));");
         DB.execSQL("insert into security values('1222','123','khalid','0546545654')");
         DB.execSQL("insert into admin values('0011','123','mohammed','995554466')");
         DB.execSQL("insert into driver values ('9888','123','ahmed','65564654','2724EJD')");
-        DB.execSQL("insert into ticket values (0,'0','0','0','0',0,1,'0',0)");
+        DB.execSQL("insert into ticket values (0,'14','0','0','0',0,1,'0',0)");
+        DB.execSQL("insert into ticket values (1,'14','0','0','0',0,1,'9888',0)");
+        DB.execSQL("insert into ticket values (2,'14','0','0','0',0,1,'9888',0)");
+        DB.execSQL("insert into ticket values (3,'14','0','0','0',0,1,'9888',0)");
+        DB.execSQL("insert into ticket values (4,'14','0','0','0',0,1,'9888',0)");
 
     }
 
