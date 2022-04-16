@@ -34,16 +34,15 @@
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_acivity_driver.xml" value="0.25" />
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_admin.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_driver.xml" value="0.25" />
-        <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_information.xml" value="0.25" />
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_myinformation.xml" value="0.2" />
-        <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_new_fine.xml" value="0.264" />
-        <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_objection.xml" value="0.25" />
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_security.xml" value="0.25" />
-        <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/adminhomepage.xml" value="0.264" />
-        <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/driverhomepage.xml" value="0.25" />
-        <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/securityhomepage.xml" value="0.25" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/KAUeParking/app/src/main/res/layout/activity_history.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/KAUeParking/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/KAUeParking/app/src/main/res/layout/activity_new_fine.xml" value="0.264" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/KAUeParking/app/src/main/res/layout/activity_start_page.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/KAUeParking/app/src/main/res/layout/driverhomepage.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/KAUeParking/app/src/main/res/layout/objection.xml" value="0.25" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/KAUeParking/app/src/main/res/layout/row.xml" value="0.2" />
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/KAUeParking/app/src/main/res/layout/securityhomepage.xml" value="0.19010416666666666" />
       </map>
     </option>

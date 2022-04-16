@@ -112,11 +112,20 @@ public class newFine extends AppCompatActivity {
                 if (location != null) {
 
 
-                    try {
-                        Geocoder geocoder = new Geocoder(newFine.this, Locale.getDefault());
-                        List<Address> addresses = geocoder.getFromLocation(location.getLatitude(),location.getLongitude(), 1);
 
-                        tv2.setText(Html.fromHtml("<font color='#6200EE'><b>Country Name :</b></font>"
+                        Geocoder geocoder = new Geocoder(newFine.this, Locale.getDefault());
+                    List<Address> addresses = null;
+
+                    try {
+
+                        addresses = geocoder.getFromLocation(location.getLatitude(),location.getLongitude(), 1);
+
+                    } catch (IOException e) {
+
+                        e.printStackTrace();
+                    }
+
+                    tv2.setText(Html.fromHtml("<font color='#6200EE'><b>Country Name :</b></font>"
                         + addresses.get(0).getCountryName()));
 
                         tv3.setText(Html.fromHtml("<font color='#6200EE'><b>Address :</b></font>"
@@ -124,14 +133,13 @@ public class newFine extends AppCompatActivity {
 
 
                         ticket.setLocation(addresses.get(0).getAddressLine(0));
-                    } catch (IOException e) {
-                        System.out.println(e);
-                        e.printStackTrace();
-                    }
+
+
                 }
             }
         });
     }
+
     Ticket ticket = new Ticket() ;
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

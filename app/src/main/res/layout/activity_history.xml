@@ -1,160 +1,17 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".history">
 
-    <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:scrollbars="vertical">
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_margin="20dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/his1"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:text="Hello"
-                android:textSize="20dp" />
-            <View
-                android:id="@+id/view1"
-                android:layout_width="match_parent"
-                android:layout_height="6dp"
-                android:layout_marginTop="15dp"
-                android:background="@color/black"
-                />
-
-            <TextView
-                android:id="@+id/his2"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:textSize="20dp"
-                android:text="Hello"/>
-            <View
-                android:id="@+id/view2"
-                android:layout_width="match_parent"
-                android:layout_height="6dp"
-                android:layout_marginTop="15dp"
-                android:background="@color/black"
-                />
-            <TextView
-                android:id="@+id/his3"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:textSize="20dp"
-                android:text="Hello"/>
-
-            <View
-                android:id="@+id/view3"
-                android:layout_width="match_parent"
-                android:layout_height="6dp"
-                android:layout_marginTop="15dp"
-                android:background="@color/black"
-                />
-            <TextView
-                android:id="@+id/his4"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:textSize="20dp"
-                android:text="Hello"/>
-
-            <View
-                android:id="@+id/view4"
-                android:layout_width="match_parent"
-                android:layout_height="6dp"
-                android:layout_marginTop="15dp"
-                android:background="@color/black"
-                />
-            <TextView
-                android:id="@+id/his5"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:textSize="20dp"
-                android:text="Hello"/>
-
-            <View
-                android:id="@+id/view5"
-                android:layout_width="match_parent"
-                android:layout_height="6dp"
-                android:layout_marginTop="15dp"
-                android:background="@color/black"
-                />
-            <TextView
-                android:id="@+id/his6"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:textSize="20dp"
-                android:text="Hello"/>
-            <View
-                android:id="@+id/view6"
-                android:layout_width="match_parent"
-                android:layout_height="6dp"
-                android:layout_marginTop="15dp"
-                android:background="@color/black"
-                />
-            <TextView
-                android:id="@+id/his7"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:text="Hello"
-                android:textSize="20dp" />
-            <View
-                android:id="@+id/view7"
-                android:layout_width="match_parent"
-                android:layout_height="6dp"
-                android:layout_marginTop="15dp"
-                android:background="@color/black"
-                />
-
-            <TextView
-                android:id="@+id/his8"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:textSize="20dp"
-                android:text="Hello"/>
-            <View
-                android:id="@+id/view8"
-                android:layout_width="match_parent"
-                android:layout_height="6dp"
-                android:layout_marginTop="15dp"
-                android:background="@color/black"
-                />
-            <TextView
-                android:id="@+id/his9"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:text="Hello"
-                android:textSize="20dp" />
-            <View
-                android:id="@+id/view9"
-                android:layout_width="match_parent"
-                android:layout_height="6dp"
-                android:layout_marginTop="15dp"
-                android:background="@color/black"
-                />
-
-            <TextView
-                android:id="@+id/his10"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:textSize="20dp"
-                android:text="Hello"/>
-            <View
-                android:id="@+id/view10"
-                android:layout_width="match_parent"
-                android:layout_height="6dp"
-                android:layout_marginTop="15dp"
-                android:background="@color/black"
-                />
-
-
-        </LinearLayout>
-
-    </ScrollView>
-
-</RelativeLayout>
+    <ListView
+        android:id="@+id/Listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

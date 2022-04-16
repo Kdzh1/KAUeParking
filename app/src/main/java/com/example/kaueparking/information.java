@@ -19,7 +19,7 @@ public class information extends AppCompatActivity {
 
         Bundle b = getIntent().getExtras();
         String ID = b.getString("ID");
-        System.out.println(ID);
+
         DBHelper db = new DBHelper(this);
         if (ID.startsWith("0")){
             Admin a = (Admin) db.getData("admin",ID);

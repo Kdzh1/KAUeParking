@@ -26,6 +26,7 @@ public class DBHelper extends SQLiteOpenHelper {
         DB.execSQL("insert into admin values('0011','123','mohammed','995554466')");
         DB.execSQL("insert into driver values ('9888','123','ahmed','65564654','2724EJD')");
         DB.execSQL("insert into ticket values (0,'0','0','0','0',0,1,'0',0)");
+
     }
 
     @Override
@@ -250,7 +251,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return null;
     }
 
-    private ArrayList getTicket(String id) { // get all tickets that the driver have
+    public ArrayList getTicket(String id) { // get all tickets that the driver have
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery("SELECT * FROM Ticket where driverID=? ", new String[]{id});
         ArrayList arr = new ArrayList();

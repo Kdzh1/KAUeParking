@@ -3,7 +3,9 @@ package com.example.kaueparking;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.Button;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class history extends AppCompatActivity {
 
@@ -12,8 +14,27 @@ public class history extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
 
-        //Button bt=findViewById(R.id.obj);
+        DBHelper db = new DBHelper(this);
+        Bundle b = getIntent().getExtras();
+        String ID = b.getString("ID");
 
-        //bt.setText("done!");
+        ArrayList tick = db.getTicket(ID);
+
+
+
+        Ticket[] tickets=(Ticket[]) tick.toArray();
+
+        int xml=R.layout.row;
+        TicketAdapter ticketAdapter = new TicketAdapter(history.this,xml,tickets);
+
+        ListView listView= findViewById(R.id.Listview);
+
+        listView.setAdapter(ticketAdapter);
+
+
+
+
+
+
     }
 }
