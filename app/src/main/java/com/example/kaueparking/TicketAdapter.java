@@ -14,14 +14,14 @@ import androidx.annotation.Nullable;
 public class TicketAdapter extends ArrayAdapter {
     Context adapterContext;
     int adapterResource;
-    Ticket[] tickets;
+    Ticket[] adapterTickets;
 
     public TicketAdapter(@NonNull Context context, int resource, @NonNull Ticket[] tickets) {
         super(context, resource, tickets);
 
         adapterContext=context;
         adapterResource=resource;
-        tickets=this.tickets;
+        adapterTickets=tickets;
 
 
     }
@@ -46,7 +46,7 @@ public class TicketAdapter extends ArrayAdapter {
         TextView ticketLocation = row.findViewById(R.id.ticket_location);
         Button objectionBT=row.findViewById(R.id.objectionBT);
 
-        Ticket tick=tickets[position];
+        Ticket tick=adapterTickets[position];
 
         // take the values from each ticket and desplay it
         ticketId.setText(tick.getId());

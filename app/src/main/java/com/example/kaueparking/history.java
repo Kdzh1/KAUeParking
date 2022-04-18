@@ -17,7 +17,7 @@ public class history extends AppCompatActivity {
         DBHelper db = new DBHelper(this);
         Bundle b = getIntent().getExtras();
         String ID = b.getString("ID");
-        System.out.println("PASSED ID: "+ID);
+
         ArrayList tick = db.getTicket(ID);
 
 
