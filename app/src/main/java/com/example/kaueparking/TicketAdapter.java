@@ -49,7 +49,7 @@ public class TicketAdapter extends ArrayAdapter {
         Ticket tick=adapterTickets[position];
 
         // take the values from each ticket and desplay it
-        ticketId.setText(tick.getId());
+        ticketId.setText(tick.getId()+"");
         ticketPrice.setText(tick.getPrice());
         ticketTime.setText(tick.getTime());
         ticketLocation.setText(tick.getLocation());
