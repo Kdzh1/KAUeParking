@@ -47,7 +47,9 @@ public class TicketAdapter extends ArrayAdapter {
         Button objectionBT=row.findViewById(R.id.objectionBT);
 
         Ticket tick=adapterTickets[position];
-
+        if(tick.getApproved()==2){
+            objectionBT.setVisibility(View.INVISIBLE);
+        }
         // take the values from each ticket and desplay it
         ticketId.setText(tick.getId()+"");
         ticketPrice.setText(tick.getPrice());
