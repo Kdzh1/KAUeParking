@@ -156,7 +156,7 @@ public class DBHelper extends SQLiteOpenHelper {
             contentValues.put("plate", t.getPlate());
             contentValues.put("price", t.getPrice());
             contentValues.put("location", t.getLocation());
-            contentValues.put("time",t.getTime());
+            contentValues.put("time", t.getTime());
             contentValues.put("status", t.getStatus());
             contentValues.put("approved", t.getApproved());
             contentValues.put("driverID", t.getDriverID());
@@ -171,10 +171,10 @@ public class DBHelper extends SQLiteOpenHelper {
             } else {
                 return true;
             }
-        }else  if (operation.equalsIgnoreCase("delete")){
-            Cursor cursor = db.rawQuery("select * from ticket where id = ?", new String[]{t.getId()+""});
-            if (cursor.getCount() > 0){
-                long result = db.delete("ticket", "id=?", new String[]{t.getId()+""});
+        } else if (operation.equalsIgnoreCase("delete")) {
+            Cursor cursor = db.rawQuery("select * from ticket where id = ?", new String[]{t.getId() + ""});
+            if (cursor.getCount() > 0) {
+                long result = db.delete("ticket", "id=?", new String[]{t.getId() + ""});
                 if (result == -1) {
                     cursor.close();
                     return false;
@@ -258,7 +258,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public ArrayList getTicket(String id) { // get all tickets that the driver have
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * from ticket where driverID=?", new String []{id});
+        Cursor c = db.rawQuery("SELECT * from ticket where driverID=?", new String[]{id});
 
         ArrayList arr = new ArrayList();
         if (c.moveToFirst()) {
@@ -287,7 +287,7 @@ public class DBHelper extends SQLiteOpenHelper {
         c.moveToFirst();
         int i = c.getCount();
 
-        if (i>0){
+        if (i > 0) {
             String s = c.getString(0);
             c.close();
             return s;
@@ -308,16 +308,16 @@ public class DBHelper extends SQLiteOpenHelper {
             }
             cursor.close();
         }
-            return "0";
+        return "0";
     }
 
-    public boolean makeObjection(String ticketID){ // this method is for driver to make objection
+    public boolean makeObjection(String ticketID) { // this method is for driver to make objection
         SQLiteDatabase db = this.getWritableDatabase();
-        Ticket t = (Ticket) this.getData("ticket",ticketID);
+        Ticket t = (Ticket) this.getData("ticket", ticketID);
         ContentValues contentValues = new ContentValues();
-        if (t.getApproved()!=2) { // if the approved attribute value is 2 this means that the ticket is already checked and approved
-            contentValues.put("approved",0);
-            long result = db.update("ticket", contentValues,"id=?", new String[]{t.getId() + ""});
+        if (t.getApproved() != 2) { // if the approved attribute value is 2 this means that the ticket is already checked and approved
+            contentValues.put("approved", 0);
+            long result = db.update("ticket", contentValues, "id=?", new String[]{t.getId() + ""});
             if (result == -1) {
                 return false;
             } else {
@@ -327,11 +327,11 @@ public class DBHelper extends SQLiteOpenHelper {
         return false;
     }
 
-    public boolean approveTicket(String ticketID){ // this method is for admin to approve that the ticket is deserved
+    public boolean approveTicket(String ticketID) { // this method is for admin to approve that the ticket is deserved
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("approved",2); // 2 means that the ticket can not be objected any more
-        long result = db.update("ticket", contentValues,"id=?", new String[]{ticketID});
+        contentValues.put("approved", 2); // 2 means that the ticket can not be objected any more
+        long result = db.update("ticket", contentValues, "id=?", new String[]{ticketID});
         if (result == -1) {
             return false;
         } else {
@@ -339,7 +339,29 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
+    public ArrayList getObjectedTickets() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT * from ticket where approved=?", new String[]{"0"});
+        ArrayList arr = new ArrayList();
+        if (c.moveToFirst()) {
+            do {
+                Ticket ticket = new Ticket();
+                ticket.setId(Integer.parseInt(c.getString(0)));
+                ticket.setPlate(c.getString(1));
+                ticket.setPrice(c.getString(2));
+                ticket.setLocation(c.getString(3));
+                ticket.setTime(c.getString(4));
+                ticket.setStatus(Integer.parseInt(c.getString(5)));
+                ticket.setApproved(Integer.parseInt(c.getString(6)));
+                ticket.setDriverID(c.getString(7));
+                arr.add(ticket);
+            } while (c.moveToNext());
+            c.close();
+            return arr;
+        }
+        return null;
 
+    }
 }
 
 
