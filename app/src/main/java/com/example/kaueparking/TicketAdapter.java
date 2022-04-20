@@ -45,7 +45,7 @@ public class TicketAdapter extends ArrayAdapter {
         TextView ticketTime = row.findViewById(R.id.ticket_time);
         TextView ticketLocation = row.findViewById(R.id.ticket_location);
         Button objectionBT=row.findViewById(R.id.objectionBT);
-        TextView ticketPaid = row.findViewById(R.id.ticket_paid);
+        TextView ticketPaid = row.findViewById(R.id.status);
         Ticket tick=adapterTickets[position];
         if(tick.getApproved()==2){
             objectionBT.setVisibility(View.INVISIBLE);
