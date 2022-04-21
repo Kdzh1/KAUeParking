@@ -12,6 +12,7 @@ public class Ticket {
     private int approved = 1; // Ticket is approved and no need for admin to check it
     private String driverID;
     private Bitmap violationImg;
+    private String description;
 
     public int getId() {
         return id;
@@ -79,6 +80,14 @@ public class Ticket {
 
     public Bitmap getViolationImg() {
         return violationImg;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
