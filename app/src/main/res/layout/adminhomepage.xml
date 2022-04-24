@@ -93,6 +93,7 @@
                             android:layout_width="64dp"
                             android:layout_height="64dp"
                             android:background="@drawable/editpersonicon"
+                            android:contentDescription="@string/action_sign_in"
                             android:padding="10dp" />
 
                         <TextView
