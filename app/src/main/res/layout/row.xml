@@ -18,7 +18,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="36dp"
             android:background="@drawable/border"
             android:gravity="center"
             android:orientation="horizontal">
@@ -27,44 +27,46 @@
             <TextView
                 android:id="@+id/status"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="21dp"
+                android:layout_marginStart="8dp"
                 android:layout_weight="1"
-                android:text="Status" />
+                android:text="status" />
 
             <TextView
                 android:id="@+id/ticket_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
+                android:layout_marginEnd="40dp"
                 android:text="Ticked id" />
 
             <TextView
                 android:id="@+id/ticket_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
+                android:layout_marginEnd="15dp"
                 android:text="Price" />
 
             <TextView
                 android:id="@+id/ticket_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
+                android:layout_marginEnd="17dp"
                 android:text="ticket time" />
 
             <TextView
                 android:id="@+id/ticket_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
+                android:layout_marginEnd="20dp"
                 android:text="ticket location" />
 
             <Button
                 android:id="@+id/objectionBT"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="113dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="right"
-                android:text="Button" />
+                android:text="Make obection"
+                android:textSize="10dp" />
 
 
         </LinearLayout>

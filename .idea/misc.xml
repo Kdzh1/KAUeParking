@@ -16,17 +16,19 @@
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_admin.xml" value="0.25" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_advice.xml" value="0.1" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_driver.xml" value="0.25" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_history.xml" value="0.22" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_driver_objected_tickets.xml" value="0.25" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_history.xml" value="0.9" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_information.xml" value="0.18" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_myinformation.xml" value="0.2993421052631579" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_new_fine.xml" value="0.25" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_objection.xml" value="0.2" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_objection.xml" value="0.25" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_security.xml" value="0.21" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_start_page.xml" value="0.22" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_trytest.xml" value="0.1" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/adminhomepage.xml" value="0.22" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/driverhomepage.xml" value="0.22" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/driver_objection.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/driverhomepage.xml" value="0.24444444444444444" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/fragment_first.xml" value="0.25" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/instrucion.xml" value="0.15" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/row.xml" value="0.33" />
@@ -59,7 +61,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.22" />
+        <option name="scale" value="0.33" />
       </ProjectState>
     </option>
   </component>

@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KAUeParking">
         <activity
+            android:name=".driver_objected_tickets"
+            android:exported="false" />
+        <activity
             android:name=".objection"
             android:exported="false" />
         <activity
