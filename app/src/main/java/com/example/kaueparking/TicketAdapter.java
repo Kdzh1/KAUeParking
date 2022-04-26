@@ -1,6 +1,7 @@
 package com.example.kaueparking;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +11,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class TicketAdapter extends ArrayAdapter {
+public class TicketAdapter extends  ArrayAdapter {
     Context adapterContext;
     int adapterResource;
     Ticket[] adapterTickets;
@@ -60,11 +62,28 @@ public class TicketAdapter extends ArrayAdapter {
         }else{
             ticketPaid.setText("Paid");
         }
+        objectionBT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+
+                Intent intent = new Intent(adapterContext,objection.class);
+                intent.putExtra("ticketID",tick.getId());
+                intent.putExtra("ticketPrice",tick.getPrice());
+                intent.putExtra("ticketTime",tick.getTime());
+                intent.putExtra("ticketLocation",tick.getLocation());
+                intent.putExtra("ticketStatus",tick.getStatus());
+                adapterContext.startActivity(intent);
+
+
+            }
+        });
 
 
 
         return row;
     }
+
+
 
 }

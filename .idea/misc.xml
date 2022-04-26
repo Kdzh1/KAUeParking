@@ -14,24 +14,19 @@
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.33" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout-w936dp/activity_login.xml" value="0.11748633879781421" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_admin.xml" value="0.25" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_admin_detailed_objection.xml" value="0.19010416666666666" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_admin_objection.xml" value="0.33" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_advice.xml" value="0.1" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_driver.xml" value="0.25" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_driver_objected_tickets.xml" value="0.25" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_history.xml" value="0.33" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_history.xml" value="0.22" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_information.xml" value="0.18" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_myinformation.xml" value="0.2993421052631579" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_new_fine.xml" value="0.25" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_objection.xml" value="0.25" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_objection.xml" value="0.2" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_security.xml" value="0.21" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_start_page.xml" value="0.22" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/activity_trytest.xml" value="0.1" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/adminhomepage.xml" value="0.22" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/driver_make_objection.xml" value="0.25" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/driver_objection.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/driverhomepage.xml" value="0.24444444444444444" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/driverhomepage.xml" value="0.22" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/fragment_first.xml" value="0.25" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/instrucion.xml" value="0.15" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/xxxx/app/src/main/res/layout/row.xml" value="0.33" />
@@ -48,9 +43,14 @@
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout-w936dp/activity_login.xml" value="0.1721311475409836" />
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_acivity_driver.xml" value="0.25" />
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_admin.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_admin_detailed_objection.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_admin_objection.xml" value="0.25" />
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_driver.xml" value="0.25" />
+        <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_driver_objected_tickets.xml" value="0.22" />
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_security.xml" value="0.25" />
+        <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/driver_make_objection.xml" value="0.25" />
+        <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/row.xml" value="0.25" />
       </map>
     </option>
   </component>
@@ -64,7 +64,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.33" />
+        <option name="scale" value="0.22" />
       </ProjectState>
     </option>
   </component>
