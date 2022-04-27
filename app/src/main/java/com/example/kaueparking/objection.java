@@ -49,14 +49,17 @@ public class objection extends AppCompatActivity {
                 EditText Description = findViewById(R.id.description);
                 String s = Description.getText().toString();
                 db.addDescription(ticketID+"",s);
-                alert.setTitle("Objection");
-                alert.setMessage("Your Objection Sent Successfully");
-                alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                    }
-                });
-                alert.create().show();
+                if (db.makeObjection(ticketID+"")){
+
+                    alert.setTitle("Objection");
+                    alert.setMessage("Your Objection Sent Successfully");
+                    alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                        }
+                    });
+                    alert.create().show();
+                }
             }
         });
 
