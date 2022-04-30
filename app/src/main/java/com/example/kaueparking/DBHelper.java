@@ -28,10 +28,13 @@ public class DBHelper extends SQLiteOpenHelper {
         DB.execSQL("insert into driver values ('9888','123','ahmed','65564654','2724EJD')");
         DB.execSQL("insert into ticket values (0,'14qw','150','al nuzhaa','1:00',0,1,'0',0,'')");
         DB.execSQL("insert into ticket values (1,'14ss','200','al marwa','2:00',0,2,'9888',0,'')");
-        DB.execSQL("insert into ticket values (2,'14aa','300','jeddah','3:55',0,1,'9888',0,'')");
-        DB.execSQL("insert into ticket values (3,'14sss','400','makkah','4:55',0,1,'9888',0,'')");
+        DB.execSQL("insert into ticket values (2,'14aa','300','jeddah','3:55',0,0,'9888',0,'')");
+        DB.execSQL("insert into ticket values (3,'14sss','400','makkah','4:55',0,0,'9888',0,'')");
         DB.execSQL("insert into ticket values (4,'14cc','500','riyadh','6:00',0,1,'9888',0,'')");
 
+        DB.execSQL("insert into ticket values (5,'14aa','300','jeddah','3:55',0,0,'9888',0,'')");
+        DB.execSQL("insert into ticket values (6,'14sss','400','makkah','4:55',0,0,'9888',0,'')");
+        DB.execSQL("insert into ticket values (7,'14cc','500','riyadh','6:00',0,0,'9888',0,'')");
     }
 
     @Override
