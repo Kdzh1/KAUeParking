@@ -30,6 +30,7 @@ public class history extends AppCompatActivity {
         }
 
         int xml=R.layout.row;
+
         TicketAdapter ticketAdapter = new TicketAdapter(history.this,xml,tickets);
 
         ListView listView= findViewById(R.id.Listview);
