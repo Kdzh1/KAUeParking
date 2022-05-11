@@ -16,9 +16,9 @@ public class AdminActivity extends AppCompatActivity {
         Bundle b = getIntent().getExtras();
         String adminID = b.getString("id");
         System.out.println(adminID);
-        ImageButton infoBtn = (ImageButton) findViewById(R.id.myInfoBtn);
+        ImageButton infoBtn =  findViewById(R.id.myInfoBtn);
 
-        Button obj=findViewById(R.id.objectionBT);
+        ImageButton obj= findViewById(R.id.objectionBtn);
 
 
         // Objection

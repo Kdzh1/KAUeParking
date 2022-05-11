@@ -31,7 +31,6 @@ public class DBHelper extends SQLiteOpenHelper {
         DB.execSQL("insert into ticket values (2,'14aa','300','jeddah','3:55',0,0,'9888',0,'')");
         DB.execSQL("insert into ticket values (3,'14sss','400','makkah','4:55',0,0,'9888',0,'')");
         DB.execSQL("insert into ticket values (4,'14cc','500','riyadh','6:00',0,1,'9888',0,'')");
-
         DB.execSQL("insert into ticket values (5,'14aa','300','jeddah','3:55',0,0,'9888',0,'')");
         DB.execSQL("insert into ticket values (6,'14sss','400','makkah','4:55',0,0,'9888',0,'')");
         DB.execSQL("insert into ticket values (7,'14cc','500','riyadh','6:00',0,0,'9888',0,'')");
