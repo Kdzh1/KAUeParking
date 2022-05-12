@@ -9,6 +9,8 @@ import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteException;
 import android.graphics.Bitmap;
 import android.location.Address;
 import android.location.Geocoder;
@@ -217,8 +219,18 @@ public class newFine extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try {
+                    if(!ticket.getPlate().equalsIgnoreCase("")){
+                        db.insertData(ticket);
+                    }else{
+                        Toast.makeText(getApplicationContext(), "Can't extract plate information. Please try again", Toast.LENGTH_LONG).show();
+                    }
 
-                db.insertData(ticket);
+                }catch (SQLiteException e){
+                    System.out.println(e.getMessage());
+                    Toast.makeText(getApplicationContext(), "Error in database", Toast.LENGTH_LONG).show();
+                }
+
             }
         });
     }

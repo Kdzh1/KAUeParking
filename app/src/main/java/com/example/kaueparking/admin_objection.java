@@ -16,8 +16,7 @@ public class admin_objection extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_objection);
-
-// Get the Objected Tickets from the database
+        // Get the Objected Tickets from the database
 
         DBHelper db = new DBHelper(this);
 
