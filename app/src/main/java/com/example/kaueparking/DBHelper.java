@@ -4,8 +4,10 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
+import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -227,6 +229,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private Security getSecurity(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery("SELECT * FROM security where id=? ", new String[]{id});
+
         if (c.moveToFirst()) {
 
             Security s = new Security();
@@ -283,7 +286,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return null;
     }
 
-    public String getDriverID(String plate) { // to fill ticket driverID attribute by passing the plate number
+    public String getDriverID(String plate)  { // to fill ticket driverID attribute by passing the plate number
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery("SELECT * FROM driver where plate=? ", new String[]{plate});
         c.moveToFirst();
@@ -342,8 +345,12 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     public ArrayList getObjectedTickets() {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * from ticket where approved=?", new String[]{"0"});
+
+
+            SQLiteDatabase db = this.getReadableDatabase();
+            Cursor c = db.rawQuery("SELECT * from ticket where approved=?", new String[]{"0"});
+
+
         ArrayList arr = new ArrayList();
         if (c.moveToFirst()) {
             do {
@@ -361,11 +368,12 @@ public class DBHelper extends SQLiteOpenHelper {
             c.close();
             return arr;
         }
-        return null;
 
+
+        return null;
     }
 
-    public boolean addDescription(String ticketID, String description){
+    public boolean addDescription (String ticketID, String description) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("description", description);
