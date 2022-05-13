@@ -14,7 +14,7 @@ public class MainActivityTest {
         String inputID="1222";
         String inputPass="123";
 
-        boolean result= s.verify(inputPass);
+        boolean result= s.verifyPass(inputPass);
         assertEquals(true, result);
     }
 }

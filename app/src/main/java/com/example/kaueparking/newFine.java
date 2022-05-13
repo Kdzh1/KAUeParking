@@ -223,6 +223,7 @@ public class newFine extends AppCompatActivity {
                     if(!ticket.getPlate().equalsIgnoreCase("")){
                         if (ticket.ensureFilling()) {
                             if(db.insertData(ticket)){
+                                finish();
                                 Toast.makeText(getApplicationContext(), "Ticket added successfully", Toast.LENGTH_LONG).show();
                             }
                         }else{

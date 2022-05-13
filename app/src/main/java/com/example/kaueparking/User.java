@@ -38,11 +38,21 @@ public abstract class User {
         this.phone = phone;
     }
 
-    public boolean verify(String inputPass){
+    public boolean verifyPass(String inputPass){
         if (inputPass.equalsIgnoreCase(this.password)){
             return true;
         }
         return false;
+    }
+    public boolean verifyInfo(){
+        if (this.name == null || this.name.equalsIgnoreCase("")){
+            return false;
+        }if (this.password == null || this.password.equalsIgnoreCase("")){
+            return false;
+        }if (this.phone == null || this.phone.equalsIgnoreCase("")){
+            return false;
+        }
+        return true;
     }
     @Override
     public String toString() {

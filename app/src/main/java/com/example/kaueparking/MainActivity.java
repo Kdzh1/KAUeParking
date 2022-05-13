@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 Admin a;
                 a = (Admin) db.getData("admin", id); //BRING THE DATA FROM DATABASE TO COMPARE IT
 
-                if (a.verify(pass)) {
+                if (a.verifyPass(pass)) {
                     openAdmin(id);                    // IF THE PASSWORD IS CORRECT THEN GO TO NEXT MENU
                 } else {
 
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         } else if (id.startsWith("1")) {
             try {
                 Security s = (Security) db.getData("security", id);
-                if (s.verify(pass)) {
+                if (s.verifyPass(pass)) {
                     openSecurity(id);
                 } else {
 
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             try{
                 Driver d = (Driver) db.getData("driver", id);
-                if (d.verify(pass)) {
+                if (d.verifyPass(pass)) {
                     openDriver(id);
                 } else {
                     alert.setTitle(" ");
