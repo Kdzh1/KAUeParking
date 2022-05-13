@@ -38,6 +38,12 @@ public abstract class User {
         this.phone = phone;
     }
 
+    public boolean verify(String inputPass){
+        if (inputPass.equalsIgnoreCase(this.password)){
+            return true;
+        }
+        return false;
+    }
     @Override
     public String toString() {
         return "User{" +

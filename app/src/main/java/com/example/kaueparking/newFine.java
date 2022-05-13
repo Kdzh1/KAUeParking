@@ -221,7 +221,13 @@ public class newFine extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     if(!ticket.getPlate().equalsIgnoreCase("")){
-                        db.insertData(ticket);
+                        if (ticket.ensureFilling()) {
+                            if(db.insertData(ticket)){
+                                Toast.makeText(getApplicationContext(), "Ticket added successfully", Toast.LENGTH_LONG).show();
+                            }
+                        }else{
+                            Toast.makeText(getApplicationContext(), "Some information of ticket is not filled out ", Toast.LENGTH_LONG).show();
+                        }
                     }else{
                         Toast.makeText(getApplicationContext(), "Can't extract plate information. Please try again", Toast.LENGTH_LONG).show();
                     }

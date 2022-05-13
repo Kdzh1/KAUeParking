@@ -85,6 +85,18 @@ public class Ticket {
     public String getDescription() {
         return description;
     }
+    public boolean ensureFilling(){
+        if (this.id < 0){
+            return false;
+        }if (this.plate == null){
+            return false;
+        }if (this.price == null){
+            return false;
+        }if (this.time == null){
+            return false;
+        }
+        return true;
+    }
 
     public void setDescription(String description) {
         this.description = description;
