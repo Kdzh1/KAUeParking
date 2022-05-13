@@ -9,4 +9,12 @@ public class Admin extends User{
     public String toString() {
         return super.toString();
     }
+
+    public void deleteTicket(Ticket t, DBHelper db){
+    
+    }
+
+
+
+
 }

@@ -261,7 +261,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return null;
     }
 
-    public ArrayList getTicket(String id) { // get all tickets that the driver have
+    public ArrayList getTicket(String id) {     // get all tickets that the driver have
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery("SELECT * from ticket where driverID=?", new String[]{id});
 
@@ -316,7 +316,8 @@ public class DBHelper extends SQLiteOpenHelper {
         return "0";
     }
 
-    public boolean makeObjection(String ticketID) { // this method is for driver to make objection
+    public boolean makeObjection(String ticketID) { //MOVE TO DRIVER
+        // this method is for driver to make objection
         SQLiteDatabase db = this.getWritableDatabase();
         Ticket t = (Ticket) this.getData("ticket", ticketID);
         ContentValues contentValues = new ContentValues();
@@ -332,7 +333,8 @@ public class DBHelper extends SQLiteOpenHelper {
         return false;
     }
 
-    public boolean approveTicket(String ticketID) { // this method is for admin to approve that the ticket is deserved
+    public boolean approveTicket(String ticketID) { // MOVE TO ADMIN
+        // this method is for admin to approve that the ticket is deserved
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("approved", 2); // 2 means that the ticket can not be objected any more
@@ -373,7 +375,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return null;
     }
 
-    public boolean addDescription (String ticketID, String description) {
+    public boolean addDescription (String ticketID, String description) { // MOVE TO DRIVER
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("description", description);
