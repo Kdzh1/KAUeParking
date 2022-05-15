@@ -18,7 +18,6 @@ public class admin_detailed_objection extends AppCompatActivity {
         setContentView(R.layout.activity_admin_detailed_objection);
         TextView driverName, driverID, ticketID, plate, price, time, location,description;
         Button approve,reject;
-
         ImageView ticketImg;
         Bundle b = getIntent().getExtras();
         String tickID = b.getString("ticketID");
@@ -67,7 +66,14 @@ public class admin_detailed_objection extends AppCompatActivity {
         reject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db.deleteData("ticket",t);
+                if(db.rejectTicket(t.getId()+"")){
+                    Toast.makeText(getApplicationContext(), "Ticket rejected successfully", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_LONG).show();
+                }
+
+
+
             }
         });
 

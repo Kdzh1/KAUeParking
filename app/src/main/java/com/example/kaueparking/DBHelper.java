@@ -427,6 +427,20 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         return "0";
     }
+
+    public boolean rejectTicket(String ticketID) { // MOVE TO ADMIN
+        // this method is for admin to approve that the ticket is deserved
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("approved", 3); // 2 means that the ticket can not be objected any more
+        long result = db.update("ticket", contentValues, "id=?", new String[]{ticketID});
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
 }
 
 
