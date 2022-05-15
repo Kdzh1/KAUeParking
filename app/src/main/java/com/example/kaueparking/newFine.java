@@ -134,7 +134,7 @@ public class newFine extends AppCompatActivity {
                                 + addresses.get(0).getAddressLine(0)));
 
 
-                        ticket.setLocation(addresses.get(0).getAddressLine(0));
+                        ticket.setLocation(addresses.get(0).getCountryName());
 
 
                 }
@@ -178,7 +178,7 @@ public class newFine extends AppCompatActivity {
                     String numbers = "";
                     String letters = "";
                     for (int i = 0; i < text.length; i++) {
-                        if (text[i].length() > 1) {
+                        if (text[i].length() > 3) {
                             numbers = text[i];
 
 

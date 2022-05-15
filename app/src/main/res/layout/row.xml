@@ -58,7 +58,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
-                android:text="ticket location" />
+                android:text="ticket location"
+                android:textAlignment="textStart" />
 
             <Button
                 android:id="@+id/objectionBT"

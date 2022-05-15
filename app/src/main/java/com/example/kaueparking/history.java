@@ -18,7 +18,7 @@ public class history extends AppCompatActivity {
         Bundle b = getIntent().getExtras();
         String ID = b.getString("ID");
 
-        ArrayList tick = db.getTicket(ID);
+        ArrayList tick = db.getAllTicket(ID);
 
 
         Ticket[] tickets = new Ticket[tick.size()];

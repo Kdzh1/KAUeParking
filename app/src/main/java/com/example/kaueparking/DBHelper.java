@@ -4,15 +4,15 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
-import android.widget.Toast;
+import android.graphics.BitmapFactory;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class DBHelper extends SQLiteOpenHelper {
+
 
     public DBHelper(Context context) {
         super(context, "DB2022", null, 1);
@@ -58,7 +58,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean deleteData(String tableName, String data[]) {
+    public boolean deleteData(String tableName, Object data) {
 
         if (tableName.equalsIgnoreCase("driver")) {
             return driverTable("delete", data);
@@ -207,6 +207,31 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
+    private Ticket getTicket(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        System.out.println(id + " the ID of objected Ticket");
+        Cursor c = db.rawQuery("SELECT * FROM ticket where id=? ", new String[]{id});
+        if (c.moveToFirst()) {
+
+            Ticket t = new Ticket();
+            t.setId(Integer.parseInt(c.getString(0)));
+            t.setPlate(c.getString(1));
+            t.setPrice(c.getString(2));
+            t.setLocation(c.getString(3));
+            t.setTime(c.getString(4));
+            t.setStatus(Integer.parseInt(c.getString(5)));
+            t.setApproved(Integer.parseInt(c.getString(6)));
+            t.setDriverID(c.getString(7));
+            Bitmap image = BitmapFactory.decodeByteArray(c.getBlob(8),0,c.getBlob(8).length);
+            t.setViolationImg(image);
+            t.setDescription(c.getString(9));
+            c.close();
+            return t;
+
+        }
+        return null;
+    }
+
     private Driver getDriver(String id) {
 
         SQLiteDatabase db = this.getReadableDatabase();
@@ -261,7 +286,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return null;
     }
 
-    public ArrayList getTicket(String id) {     // get all tickets that the driver have
+    public ArrayList getAllTicket(String id) {     // get all tickets that the driver have
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery("SELECT * from ticket where driverID=?", new String[]{id});
 
@@ -319,8 +344,10 @@ public class DBHelper extends SQLiteOpenHelper {
     public boolean makeObjection(String ticketID) { //MOVE TO DRIVER
         // this method is for driver to make objection
         SQLiteDatabase db = this.getWritableDatabase();
+
         Ticket t = (Ticket) this.getData("ticket", ticketID);
         ContentValues contentValues = new ContentValues();
+
         if (t.getApproved() != 2) { // if the approved attribute value is 2 this means that the ticket is already checked and approved
             contentValues.put("approved", 0);
             long result = db.update("ticket", contentValues, "id=?", new String[]{t.getId() + ""});

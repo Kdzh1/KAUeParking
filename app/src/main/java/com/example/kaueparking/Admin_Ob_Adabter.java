@@ -39,7 +39,7 @@ public class Admin_Ob_Adabter extends ArrayAdapter {
         LayoutInflater rowInf=LayoutInflater.from(adapterContext);
         row=rowInf.inflate(adapterResource,parent,false);
 
-        TextView ticketId = (TextView) row.findViewById(R.id.adm_Tid);
+        TextView ticketId =  row.findViewById(R.id.adm_Tid);
         TextView ticketPrice=row.findViewById(R.id.adm_price);
         TextView ticketTime = row.findViewById(R.id.adm_time);
         TextView ticketLocation = row.findViewById(R.id.adm_location);
@@ -67,11 +67,8 @@ public class Admin_Ob_Adabter extends ArrayAdapter {
 
 
                 Intent intent = new Intent(adapterContext,admin_detailed_objection.class);
-                intent.putExtra("ticketID",tick.getId());
-                intent.putExtra("ticketPrice",tick.getPrice());
-                intent.putExtra("ticketTime",tick.getTime());
-                intent.putExtra("ticketLocation",tick.getLocation());
-                intent.putExtra("ticketStatus",tick.getStatus());
+                intent.putExtra("ticketID",tick.getId()+"");
+
                 adapterContext.startActivity(intent);
 
 
