@@ -47,8 +47,8 @@ public class AdminActivity extends AppCompatActivity {
         }
 
         public void openObjection(){
-            Intent objectionintent = new Intent(this, admin_objection.class);
-            startActivity(objectionintent);
+            Intent Adminobjectionintent = new Intent(this, admin_objection.class);
+            startActivity(Adminobjectionintent);
 
         }
 }

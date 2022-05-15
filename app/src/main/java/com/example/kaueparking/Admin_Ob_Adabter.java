@@ -66,7 +66,7 @@ public class Admin_Ob_Adabter extends ArrayAdapter {
             public void onClick(View view) {
 
 
-                Intent intent = new Intent(adapterContext,objection.class);
+                Intent intent = new Intent(adapterContext,admin_detailed_objection.class);
                 intent.putExtra("ticketID",tick.getId());
                 intent.putExtra("ticketPrice",tick.getPrice());
                 intent.putExtra("ticketTime",tick.getTime());
