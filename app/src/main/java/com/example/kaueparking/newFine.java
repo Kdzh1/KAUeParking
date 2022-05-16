@@ -45,7 +45,10 @@ public class newFine extends AppCompatActivity {
     ImageView plateImage, violationImage;
     TextView plateInfo, time, price;
     Button submit;
-
+    DBHelper db = new DBHelper(this);
+    Bundle b = getIntent().getExtras();
+    String ID = b.getString("ID");
+    Security s = (Security) db.getData("security",ID);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,8 +60,9 @@ public class newFine extends AppCompatActivity {
         price = findViewById(R.id.price);
         submit = findViewById(R.id.submit);
 
-        DBHelper db = new DBHelper(this);
+
         Ticket ticket = new Ticket();
+        Security s = (Security) db.getData("security",ID);
         // Check if permission is granted for camera
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) { // If the permission is not granted
             requestPermissions(new String[]{Manifest.permission.CAMERA}, 101); // requestCode can accept any value
@@ -222,7 +226,7 @@ public class newFine extends AppCompatActivity {
                 try {
                     if(!ticket.getPlate().equalsIgnoreCase("")){
                         if (ticket.ensureFilling()) {
-                            if(db.insertData(ticket)){
+                            if(s.issueTicket(db,ticket)){
                                 finish();
                                 Toast.makeText(getApplicationContext(), "Ticket added successfully", Toast.LENGTH_LONG).show();
                             }

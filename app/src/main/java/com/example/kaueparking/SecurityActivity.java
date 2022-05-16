@@ -29,7 +29,7 @@ public class SecurityActivity extends AppCompatActivity {
         newFine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openNewFine();
+                openNewFine(securityID);
             }
         });
         //
@@ -67,9 +67,9 @@ public class SecurityActivity extends AppCompatActivity {
     }
 
 
-    public void openNewFine() {
-
+    public void openNewFine(String id) {
         Intent Tktintent = new Intent(this, newFine.class); // Add new Ticket Intent
+        Tktintent.putExtra("ID",id);
         startActivity(Tktintent);
 
     }
