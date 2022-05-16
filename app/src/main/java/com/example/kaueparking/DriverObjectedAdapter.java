@@ -12,13 +12,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class Admin_Ob_Adabter extends ArrayAdapter {
+public class DriverObjectedAdapter extends ArrayAdapter {
 
     Context adapterContext;
     int adapterResource;
     Ticket[] adapterTickets;
 
-    public Admin_Ob_Adabter(@NonNull Context context, int resource, @NonNull Ticket[] tickets) {
+    public DriverObjectedAdapter(@NonNull Context context, int resource, @NonNull Ticket[] tickets) {
         super(context, resource, tickets);
 
         adapterContext=context;
@@ -39,41 +39,35 @@ public class Admin_Ob_Adabter extends ArrayAdapter {
         LayoutInflater rowInf=LayoutInflater.from(adapterContext);
         row=rowInf.inflate(adapterResource,parent,false);
 
-        TextView ticketId =  row.findViewById(R.id.DOT_Tid);
-        TextView ticketPrice=row.findViewById(R.id.DOT_price);
-        TextView ticketTime = row.findViewById(R.id.DOT_time);
-        TextView ticketLocation = row.findViewById(R.id.DOT_location);
-        Button detail=row.findViewById(R.id.admin_respons);
-        TextView ticketPaid = row.findViewById(R.id.DOT_status);
+        TextView ticketId =  row.findViewById(R.id.DriverObjected_Tid);
+        TextView ticketPrice=row.findViewById(R.id.DriverObjected_price);
+        TextView ticketTime = row.findViewById(R.id.DriverObjected_time);
+        TextView ticketLocation = row.findViewById(R.id.DriverObjected_location);
+        TextView adminRespons= row.findViewById(R.id.DriverObjectedAdmin_respons);
+        TextView ticketPaid = row.findViewById(R.id.DriverObjected_status);
         Ticket tick=adapterTickets[position];
 
 
-        //if(tick.getApproved()==2){
-           // objectionBT.setVisibility(View.INVISIBLE);
-        //}
-        // take the values from each ticket and desplay it
+        if (tick.getApproved()==0){
+            adminRespons.setText("Not checked yet");
+
+        }else if (tick.getApproved()==2){
+            adminRespons.setText("Ticket is approved");
+        }else{
+            adminRespons.setText("Ticket is dropped");
+        }
+
         ticketId.setText(tick.getId()+"");
         ticketPrice.setText(tick.getPrice());
         ticketTime.setText(tick.getTime());
         ticketLocation.setText(tick.getLocation());
+
         if (tick.getStatus()==0){
             ticketPaid.setText("Not Paid");
         }else{
             ticketPaid.setText("Paid");
         }
-        detail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-
-                Intent intent = new Intent(adapterContext,admin_detailed_objection.class);
-                intent.putExtra("ticketID",tick.getId()+"");
-
-                adapterContext.startActivity(intent);
-
-
-            }
-        });
 
 
 

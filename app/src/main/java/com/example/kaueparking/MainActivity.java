@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Button btn = findViewById(R.id.login);
+        TextView singup = findViewById(R.id.Singup);
         Context context = this;
 
 
@@ -40,6 +42,20 @@ public class MainActivity extends AppCompatActivity {
                 verifyUser(text,pass,context);
             }
         });
+
+        singup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                openSingup();
+            }
+        });
+    }
+
+    private void openSingup() {
+
+        Intent intent=new Intent(this,register.class);
+        startActivity(intent);
     }
 
 
