@@ -7,6 +7,93 @@
     android:background="@color/skr"
     tools:context=".register">
 
+    <EditText
+        android:id="@+id/newPlate"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="145dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.641" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="106dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginEnd="310dp"
+        android:text="Plate"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.575" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="161dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="218dp"
+        android:layout_marginBottom="8dp"
+        android:text="Name"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.981" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="132dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginEnd="273dp"
+        android:text="   Phone number"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.476" />
+
+    <EditText
+        android:id="@+id/Phone"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="145dp"
+        android:layout_marginBottom="43dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView28"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView27"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="161dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="8dp"
+        android:text="ID"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/newID"
+        app:layout_constraintEnd_toEndOf="@+id/newID"
+        app:layout_constraintHorizontal_bias="0.179"
+        app:layout_constraintStart_toStartOf="@+id/newID"
+        app:layout_constraintTop_toBottomOf="@+id/Name"
+        app:layout_constraintVertical_bias="0.166" />
+
     <TextView
         android:id="@+id/textView28"
         android:layout_width="106dp"
@@ -30,39 +117,21 @@
         android:layout_marginEnd="145dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.741" />
+        app:layout_constraintVertical_bias="0.755" />
 
     <EditText
-        android:id="@+id/Phone"
+        android:id="@+id/newID"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="145dp"
-        android:layout_marginBottom="43dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView28"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView27"
+        android:layout_marginTop="44dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView27"
+        app:layout_constraintEnd_toEndOf="@+id/Phone"
+        app:layout_constraintStart_toStartOf="@+id/Phone"
+        app:layout_constraintTop_toBottomOf="@+id/Name"
         app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="132dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginEnd="273dp"
-        android:text="   Phone number"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.489" />
 
     <EditText
         android:id="@+id/Name"
@@ -75,23 +144,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.342" />
-
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="161dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="218dp"
-        android:layout_marginBottom="8dp"
-        android:text="Name"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.985" />
+        app:layout_constraintVertical_bias="0.281" />
 
     <ImageView
         android:id="@+id/imageView11"
@@ -131,8 +184,8 @@
         android:layout_marginEnd="51dp"
         android:layout_marginBottom="70dp"
         android:text="have an account? sign in"
-        android:textSize="17dp"
         android:textColor="@color/greenbutton"
+        android:textSize="17dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -148,8 +201,8 @@
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="58dp"
         android:text="   REGISTER"
-        android:textSize="34dp"
         android:textColor="@color/greenkau"
+        android:textSize="34dp"
         app:layout_constraintBottom_toTopOf="@+id/textView25"
         app:layout_constraintEnd_toStartOf="@+id/imageView11"
         app:layout_constraintStart_toStartOf="parent"
