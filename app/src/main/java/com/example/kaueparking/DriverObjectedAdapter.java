@@ -53,7 +53,7 @@ public class DriverObjectedAdapter extends ArrayAdapter {
 
         }else if (tick.getApproved()==2){
             adminRespons.setText("Ticket is approved");
-        }else{
+        }else {
             adminRespons.setText("Ticket is dropped");
         }
 

@@ -18,7 +18,7 @@ public class SecurityActivity extends AppCompatActivity {
         setContentView(R.layout.securityhomepage);
         Bundle b = getIntent().getExtras();
         String securityID = b.getString("id");
-        System.out.println(securityID);
+
         // attributes in this class
         ImageButton newFine = findViewById(R.id.addNewTktBtn); //the button of new ticket (its imgBtn not just Btn)
         ImageButton instructionBtn = (ImageButton) findViewById(R.id.instructionBtn);
@@ -69,6 +69,7 @@ public class SecurityActivity extends AppCompatActivity {
 
     public void openNewFine(String id) {
         Intent Tktintent = new Intent(this, newFine.class); // Add new Ticket Intent
+        System.out.println(id);
         Tktintent.putExtra("ID",id);
         startActivity(Tktintent);
 

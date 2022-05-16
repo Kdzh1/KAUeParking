@@ -19,12 +19,27 @@ public class AdminActivity extends AppCompatActivity {
         ImageButton infoBtn =  findViewById(R.id.myInfoBtn);
         ImageButton addSec = findViewById(R.id.addNewSecBtn);
         ImageButton obj= findViewById(R.id.objectionBtn);
+        ImageButton removeSec = findViewById(R.id.removeSecBtn);
+        ImageButton editSec = findViewById(R.id.editSecBtn);
         addSec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openAddSecurity();
             }
         });
+        removeSec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openRemoveSecurity();
+            }
+        });
+        editSec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openEditSecurity();
+            }
+        });
+
 
         // Objection
         obj.setOnClickListener(new View.OnClickListener() {

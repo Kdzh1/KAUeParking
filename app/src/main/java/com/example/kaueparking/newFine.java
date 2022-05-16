@@ -46,13 +46,16 @@ public class newFine extends AppCompatActivity {
     TextView plateInfo, time, price;
     Button submit;
     DBHelper db = new DBHelper(this);
-    Bundle b = getIntent().getExtras();
-    String ID = b.getString("ID");
-    Security s = (Security) db.getData("security",ID);
+    Bundle b ;
+    String ID ;
+    Security s;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_fine);
+        b = getIntent().getExtras();
+        ID = b.getString("ID");
+        s = (Security) db.getData("security",ID);
         plateImage = findViewById(R.id.plateImage); // To Control image
         violationImage = findViewById(R.id.violationImage);
         plateInfo = findViewById(R.id.plate);
@@ -62,7 +65,7 @@ public class newFine extends AppCompatActivity {
 
 
         Ticket ticket = new Ticket();
-        Security s = (Security) db.getData("security",ID);
+
         // Check if permission is granted for camera
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) { // If the permission is not granted
             requestPermissions(new String[]{Manifest.permission.CAMERA}, 101); // requestCode can accept any value
@@ -226,6 +229,7 @@ public class newFine extends AppCompatActivity {
                 try {
                     if(!ticket.getPlate().equalsIgnoreCase("")){
                         if (ticket.ensureFilling()) {
+                            System.out.println(s.toString());
                             if(s.issueTicket(db,ticket)){
                                 finish();
                                 Toast.makeText(getApplicationContext(), "Ticket added successfully", Toast.LENGTH_LONG).show();

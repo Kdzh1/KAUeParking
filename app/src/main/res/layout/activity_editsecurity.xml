@@ -40,7 +40,7 @@
         app:layout_constraintVertical_bias="0.432" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/SecurityID"
         android:layout_width="180dp"
         android:layout_height="50dp"
         android:layout_marginStart="115dp"
@@ -99,7 +99,7 @@
         app:srcCompat="@drawable/editpersonicon" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/search"
         android:layout_width="167dp"
         android:layout_height="42dp"
         android:layout_marginStart="133dp"

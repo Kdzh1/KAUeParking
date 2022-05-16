@@ -32,12 +32,12 @@ public class driverObjectedTickets extends AppCompatActivity {
             }
         }
 
-        OBT=new Ticket[tick.size()];
+        OBT=new Ticket[ObjectedTickt.size()];
 
         for (int j = 0; j < OBT.length; j++) {
 
 
-            OBT[j]= (Ticket) tick.get(j);
+            OBT[j]= (Ticket) ObjectedTickt.get(j);
         }
 
         int xml=R.layout.objected_row;
