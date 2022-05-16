@@ -21,6 +21,7 @@ public class DriverActivity extends AppCompatActivity {
         ImageButton instructionBtn = (ImageButton) findViewById(R.id.driverinstructionBtn);
         ImageButton infoBtn = (ImageButton) findViewById(R.id.driverInfoBtn);
         TextView ticketHistory = findViewById(R.id.ticket_history);
+        TextView objected_textView=findViewById(R.id.objected_textView);
 
         ticketHistory.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +48,19 @@ public class DriverActivity extends AppCompatActivity {
             }
         });
 
+        objected_textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openObjected(driverID);
+            }
+        });
+    }
 
+    private void openObjected(String driverID) {
+
+        Intent Infointent = new Intent(this, driverObjectedTickets.class); // Add new Ticket Intent
+        Infointent.putExtra("ID",driverID);
+        startActivity(Infointent);
     }
 
     public void openMyinformation(String id) {

@@ -13,11 +13,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KAUeParking">
+        android:theme="@style/Theme.KAUeParking">
+
         <activity
             android:name=".securityRegister"
+
+            android:name=".editsecurityinfo"
             android:exported="false" />
+
         <activity
             android:name=".editsecurityinfo"
+
+            android:name=".driverObjectedTickets"
             android:exported="false" />
         <activity
             android:name=".editsecurity"

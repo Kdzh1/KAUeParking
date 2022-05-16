@@ -10,7 +10,7 @@
 
 
     <TextView
-        android:id="@+id/toSignIn2"
+        android:id="@+id/Singup"
         android:layout_width="276dp"
         android:layout_height="43dp"
         android:layout_marginStart="208dp"

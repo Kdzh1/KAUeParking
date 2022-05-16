@@ -17,45 +17,47 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/DOT_status"
+            android:id="@+id/DriverObjected_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Status" />
 
         <TextView
-            android:id="@+id/DOT_Tid"
+            android:id="@+id/DriverObjected_Tid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Ticket ID" />
 
         <TextView
-            android:id="@+id/DOT_price"
+            android:id="@+id/DriverObjected_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Price" />
 
         <TextView
-            android:id="@+id/DOT_time"
+            android:id="@+id/DriverObjected_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Time" />
 
         <TextView
-            android:id="@+id/DOT_location"
+            android:id="@+id/DriverObjected_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Location" />
 
-        <Button
-            android:id="@+id/admin_respons"
+        <TextView
+            android:id="@+id/DriverObjectedAdmin_respons"
             android:layout_width="74dp"
             android:layout_height="35dp"
             android:layout_weight="1"
-            android:text="Details" />
+            android:text="Details"
+            android:textSize="15dp" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
