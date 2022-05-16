@@ -415,12 +415,14 @@ public class DBHelper extends SQLiteOpenHelper {
     }
     public String getNewSecurityID(){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("Select max(id) from Ticket", null);
+        Cursor cursor = db.rawQuery("Select max(id) from security", null);
         if (cursor.moveToFirst()) {
 
             while (!cursor.isAfterLast()) {
                 String maxID = cursor.getString(0);
-                return maxID;
+                int max = Integer.parseInt(maxID)+1;
+                maxID = maxID ;
+                return "1"+maxID;
 
             }
             cursor.close();

@@ -57,7 +57,7 @@ public class AdminActivity extends AppCompatActivity {
 
         }
         public void openAddSecurity(){
-        Intent intent = new Intent(this, registersecurity.class);
+        Intent intent = new Intent(this, securityRegister.class);
         startActivity(intent);
         }
     public void openEditSecurity(){

@@ -8,17 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-public class registersecurity extends AppCompatActivity {
+public class securityRegister extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registersecurity);
-
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_security_register);
         Button signUpBtn = findViewById(R.id.SignUp);
 
         DBHelper db = new DBHelper(this);
@@ -46,7 +43,7 @@ public class registersecurity extends AppCompatActivity {
                     alert.create().show();
                     if (db.insertData(s)) {
                         Toast.makeText(getApplicationContext(), "New security added successfully", Toast.LENGTH_LONG).show();
-                        finish();
+
                     } else {
                         Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_LONG).show();
                     }
