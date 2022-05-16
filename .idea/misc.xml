@@ -3,7 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/PC/AndroidStudioProjects/KAUeParking/app/src/main/res/layout/adminhomepage.xml" value="0.21" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Kau/KAUeParking/app/src/main/res/layout/activity_admin_detailed_objection.xml" value="0.25" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Kau/KAUeParking/app/src/main/res/layout/activity_admin_objection.xml" value="0.33" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Kau/KAUeParking/app/src/main/res/layout/activity_delete_security.xml" value="0.22" />
@@ -61,6 +60,7 @@
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_admin_detailed_objection.xml" value="0.264" />
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_admin_objection.xml" value="0.1" />
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_driver.xml" value="0.25" />
+        <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_editsecurity.xml" value="0.25" />
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_history.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/activity_register.xml" value="0.24547101449275363" />
@@ -71,6 +71,8 @@
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/driver_make_objection.xml" value="0.11820652173913043" />
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/row.xml" value="0.4" />
         <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/layout/securityhomepage.xml" value="0.12239583333333333" />
+        <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.12" />
+        <entry key="..\:/Users/khali/Desktop/KAUeParking/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.12" />
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/KAUeParking/app/src/main/res/layout/activity_admin_detailed_objection.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/KAUeParking/app/src/main/res/layout/activity_admin_objection.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/KAUeParking/app/src/main/res/layout/activity_history.xml" value="0.22826086956521738" />

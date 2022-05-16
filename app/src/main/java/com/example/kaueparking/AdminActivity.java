@@ -17,9 +17,14 @@ public class AdminActivity extends AppCompatActivity {
         String adminID = b.getString("id");
         System.out.println(adminID);
         ImageButton infoBtn =  findViewById(R.id.myInfoBtn);
-
+        ImageButton addSec = findViewById(R.id.addNewSecBtn);
         ImageButton obj= findViewById(R.id.objectionBtn);
-
+        addSec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openAddSecurity();
+            }
+        });
 
         // Objection
         obj.setOnClickListener(new View.OnClickListener() {
@@ -51,4 +56,16 @@ public class AdminActivity extends AppCompatActivity {
             startActivity(Adminobjectionintent);
 
         }
+        public void openAddSecurity(){
+        Intent intent = new Intent(this, registersecurity.class);
+        startActivity(intent);
+        }
+    public void openEditSecurity(){
+        Intent intent = new Intent(this, editsecurity.class);
+        startActivity(intent);
+    }
+    public void openRemoveSecurity(){
+        Intent intent = new Intent(this, delete_security.class);
+        startActivity(intent);
+    }
 }
