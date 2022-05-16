@@ -17,13 +17,12 @@
 
         <activity
             android:name=".securityRegister"
-
-            android:name=".editsecurityinfo"
             android:exported="false" />
-
         <activity
             android:name=".editsecurityinfo"
-
+            android:exported="false"
+            />
+        <activity
             android:name=".driverObjectedTickets"
             android:exported="false" />
         <activity
